@@ -1,30 +1,34 @@
-const PageLinks = ({ currentUrl }: { currentUrl: string }) => {
-  const linkStyle = (pathname: string) =>
-    currentUrl === pathname ? "underline" : "";
+type PageLink = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+  name: string;
+  href: string;
+};
+
+const pages: PageLink[] = [
+  { name: "Home", href: "/" },
+  { name: "Blog", href: "/blog" },
+  { name: "Projects", href: "/projects" },
+  { name: "About", href: "/about" },
+];
+
+const isCurrentURL = (url: string, pathname: string) => url === pathname;
+const linkStyle = (url: string) => {
+  return (pathname: string) =>
+    isCurrentURL(url, pathname) ? /*tw*/ "underline cursor-default" : "";
+};
+
+function PageLinks({ currentUrl }: { currentUrl: string }) {
+  const pathStyles = linkStyle(currentUrl);
   return (
-    <ul className="flex flex-col xs:flex-row gap-2">
-      <li>
-        <a className={linkStyle("/")} href="/">
-          Home
-        </a>
-      </li>
-      <li>
-        <a className={linkStyle("/blog")} href="/blog">
-          Blog
-        </a>
-      </li>
-      <li>
-        <a className={linkStyle("/projects")} href="/projects">
-          Projects
-        </a>
-      </li>
-      <li>
-        <a className={linkStyle("/about")} href="/about">
-          About
-        </a>
-      </li>
+    <ul className="bg-black flex flex-col xs:flex-row gap-2 divide-solid divide-y-2 xs:divide-y-0 xs:divide-x-2 divide-slate-400">
+      {pages.map((l) => (
+        <li key={l.href} className="px-4">
+          <a className={pathStyles(l.href)} href={l.href}>
+            {l.name}
+          </a>
+        </li>
+      ))}
     </ul>
   );
-};
+}
 
 export default PageLinks;
