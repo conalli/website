@@ -3,34 +3,35 @@ import { CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import { toSlug } from "@utils/page";
 
+export const prerender = true;
 export const getStaticPaths = async () => {
-    const posts = await getCollection("blog");
-    return posts.map(post => {
-        return {
-            params: {
-                slug: toSlug(post.data.title)
-            },
-            props: {
-                post
-            }
-        }
-    })
-}
+  const posts = await getCollection("blog");
+  return posts.map((post) => {
+    return {
+      params: {
+        slug: toSlug(post.data.title),
+      },
+      props: {
+        post,
+      },
+    };
+  });
+};
 
 export interface Props {
-    post: CollectionEntry<"blog">
+  post: CollectionEntry<"blog">;
 }
 
-const {post} = Astro.props;
-const {Content} = await post.render();
+const { post } = Astro.props;
+const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title}>
-    <a href="/blog">Back to Blogs</a>
-    <header>
-        <h1>{post.data.title}</h1>
-        <p>{post.data.description}</p>
-        <p>{post.data.publishDate.toDateString()}</p>
-    </header>
-    <Content />
+  <a href="/blog">Back to Blogs</a>
+  <header>
+    <h1>{post.data.title}</h1>
+    <p>{post.data.description}</p>
+    <p>{post.data.publishDate.toDateString()}</p>
+  </header>
+  <Content />
 </Layout>

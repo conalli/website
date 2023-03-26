@@ -1,18 +1,20 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import Layout from "@layouts/Layout.astro";
+import PageTitle from "@components/PageTitle.astro";
+
+export const prerender = true;
 ---
 
 <Layout title="about me.">
-	<main>
-		<h1>About me.</h1>
-		<p>
-			I am an engineer originally from the UK, now based in Tokyo. 
-			I came to Japan for many of the same reasons that I am interested in technology - to learn new things and challenge myself.
-			You can find me all across the stack using Go, TypeScript, Python, and React.
-		</p>
-	</main>
+  <main class="px-8">
+    <PageTitle text="about me" textClass="" periodClass="text-blue-500" />
+    <p>
+      I am an engineer originally from the UK, now based in Tokyo. <br />
+      I came to Japan for many of the same reasons that I am interested in technology
+      - to learn new things and challenge myself. <br />
+      You can find me all across the stack using Go, TypeScript, Python, and React.
+    </p>
+  </main>
 </Layout>
 
-<style>
-
-</style>
+<style></style>

@@ -1,9 +1,11 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import PageTitle from "@components/PageTitle.astro";
+export const prerender = true;
 ---
 
 <Layout title="">
-  <main>
-    <h1>Home</h1>
+  <main class="px-8">
+    <PageTitle text="home" textClass="" periodClass="text-red-500" />
   </main>
 </Layout>

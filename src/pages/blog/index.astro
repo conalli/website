@@ -1,13 +1,14 @@
 ---
 import BlogList from "@components/BlogList.astro";
+import PageTitle from "@components/PageTitle.astro";
 import Layout from "@layouts/Layout.astro";
+
+export const prerender = true;
 ---
 
 <Layout title="blog">
   <main class="px-8">
-    <h1 class="text-8xl font-bold w-[50%] m-auto pb-6">
-      blog<span class="text-yellow-500">.</span>
-    </h1>
+    <PageTitle text="blog" textClass="" periodClass="text-yellow-500" />
     <BlogList />
   </main>
 </Layout>

@@ -1,9 +1,12 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import PageTitle from "@components/PageTitle.astro";
+
+export const prerender = true;
 ---
 
 <Layout title="projects">
-  <main>
-    <h1>Projects</h1>
+  <main class="px-8">
+    <PageTitle text="projects" textClass="" periodClass="text-green-500" />
   </main>
 </Layout>
