@@ -5,6 +5,7 @@ import PageLinks from "./PageLinks";
 
 function Nav({ currentUrl }: { currentUrl: string }) {
   const { width } = useWindowDimensions();
+  if (width === 0) return null;
   return (
     <nav>
       <CustomView condition={width > 500}>

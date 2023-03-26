@@ -1,0 +1,14 @@
+---
+export interface Props {
+  text: string;
+  textClass: string;
+  periodClass: string;
+}
+const { text, textClass, periodClass } = Astro.props;
+---
+
+<h1
+  class={`text-7xl sm:text-8xl font-bold w-full lg:w-[50%] m-auto pb-6 ${textClass}`}
+>
+  {text}<span class={periodClass}>.</span>
+</h1>
