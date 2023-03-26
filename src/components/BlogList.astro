@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import BlogCard from "@components/BlogCard.astro";
+import { toSlug } from "@utils/page";
+
+const posts = await getCollection("blog", (post) => {
+  return import.meta.env.MODE !== "production" || post.data.draft === false;
+});
+
+posts.sort(
+  (a, b) => b.data.publishDate.getUTCDate() - a.data.publishDate.getUTCDate()
+);
+---
+
+<div class="w-[50%] m-auto">
+  <h3 class="text-xl pb-4">most recent:</h3>
+  <ul class="flex flex-col gap-2">
+    {
+      posts
+        .sort()
+        .map((post) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            date={post.data.publishDate}
+            href={`/blog/${toSlug(post.data.title)}`}
+          />
+        ))
+    }
+  </ul>
+</div>

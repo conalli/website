@@ -4,16 +4,18 @@ type PageLink = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
 };
 
 const pages: PageLink[] = [
-  { name: "Home", href: "/" },
-  { name: "Blog", href: "/blog" },
-  { name: "Projects", href: "/projects" },
-  { name: "About", href: "/about" },
+  { name: "home", href: "/" },
+  { name: "projects", href: "/projects" },
+  { name: "blog", href: "/blog" },
+  { name: "about", href: "/about" },
 ];
 
 const isCurrentURL = (url: string, pathname: string) => url === pathname;
 const linkStyle = (url: string) => {
   return (pathname: string) =>
-    isCurrentURL(url, pathname) ? /*tw*/ "underline cursor-default" : "";
+    isCurrentURL(url, pathname)
+      ? /*tw*/ "underline underline-offset-4 decoration-yellow-500 cursor-default shadow"
+      : "";
 };
 
 function PageLinks({ currentUrl }: { currentUrl: string }) {

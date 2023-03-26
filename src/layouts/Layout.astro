@@ -1,28 +1,32 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
-import Header from '../components/Header.astro';
+import Header from "../components/Header.astro";
+import { toTitle } from "../utils/page";
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header />
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{toTitle(title)}</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+  </body>
 </html>
-<style>
-	html {
-		background-color: black;
-		color: white;
-	}
+<style is:global>
+  :root {
+    --accent-gradient: linear-gradient(45deg, black, #ffffff7c 30%);
+  }
+  html {
+    background-color: black;
+    color: white;
+  }
 </style>

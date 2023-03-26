@@ -1,9 +1,9 @@
 ---
-import Nav from "./Nav"
+import Nav from "./Nav";
 const url = Astro.url.pathname;
 ---
 
-<header class="flex justify-between w-screen p-4">
-    <span class="text-xl font-bold">C</span>
-    <Nav client:only currentUrl={url} />
+<header class="flex justify-between w-screen py-6 px-8">
+  <span class="text-xl font-bold">C</span>
+  <Nav client:load currentUrl={url} />
 </header>
