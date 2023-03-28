@@ -2,6 +2,7 @@
 export interface Props {
   title: string;
 }
+import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import { toTitle } from "@utils/page";
 const { title } = Astro.props;
@@ -19,33 +20,36 @@ const { title } = Astro.props;
   <body>
     <Header />
     <slot />
+    <Footer />
   </body>
-</html>
-<style is:global>
-  :root {
-    --accent-gradient: linear-gradient(45deg, black, #ffffff7c 30%);
-  }
-  html {
-    background-color: black;
-    color: white;
-  }
-  .under {
-    position: relative;
-  }
-  .under::after {
-    content: "";
-    display: block;
-    height: 2px;
-    left: 0px;
-    position: absolute;
-    right: 0px;
-    transform: scaleX(0);
-    transform-origin: right top;
-    transition: transform 0.25s cubic-bezier(0.2, 0.65, 0.3, 0.9) 0s;
-  }
 
-  .under:hover::after {
-    transform: scaleX(1);
-    transform-origin: left top;
-  }
-</style>
+  <style lang="scss" is:global>
+    :root {
+      --accent-gradient: linear-gradient(45deg, black, #ffffff7c 30%);
+    }
+    html {
+      background-color: #141414;
+      color: white;
+
+      .under {
+        position: relative;
+        &::after {
+          content: "";
+          display: block;
+          height: 2px;
+          left: 0px;
+          position: absolute;
+          right: 0px;
+          transform: scaleX(0);
+          transform-origin: right top;
+          transition: transform 0.25s cubic-bezier(0.2, 0.65, 0.3, 0.9) 0s;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+          transform-origin: left top;
+        }
+      }
+    }
+  </style>
+</html>
