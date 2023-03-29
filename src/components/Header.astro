@@ -1,11 +1,15 @@
 ---
-import Nav from "./Nav/Nav";
+import Nav from "./Nav/NavBar";
 const url = Astro.url.pathname;
 ---
 
-<header class="flex justify-between w-screen py-6 px-8 animate-fadeIn">
-  <span class="text-3xl font-serif font-bold"
-    >C<span class="text-gray-400">.</span>i</span
-  >
+<header
+  class="bg-bgDark flex justify-between w-screen pt-4 pb-1 px-8 animate-fadeIn sticky top-0"
+>
+  <a href="/" class="rounded-full"
+    ><span class="text-3xl font-serif font-bold"
+      >C<span class="text-gray-400 mx-[0.25rem]">.</span>i</span
+    >
+  </a>
   <Nav client:load currentUrl={url} />
 </header>
