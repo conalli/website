@@ -10,7 +10,7 @@ const { title, description, date, href } = Astro.props;
 ---
 
 <li class="link-card flex">
-  <a href={href} class="w-full">
+  <a href={href} class="w-full flex justify-between">
     <article>
       <h2>{title}<span>&nbsp;&nbsp;&nbsp;&nbsp;&rarr;</span></h2>
       <p>{description}</p>
@@ -23,17 +23,18 @@ const { title, description, date, href } = Astro.props;
     list-style: none;
     display: flex;
     padding: 0.25rem;
-    background-image: none;
-    background-size: 400%;
-    border-radius: 0.6rem;
+    border-radius: 0.4rem;
     border-color: #444;
     border-width: 2px;
     background-position: 100%;
     transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px -1px black, 0 2px 4px -2px black;
   }
 
+  .link-card:is(:hover, :focus-within) {
+    border-color: #71717a;
+    transition: border-color 0.5s ease-in-out;
+  }
   .link-card > a {
     width: 100%;
     text-decoration: none;
@@ -42,6 +43,7 @@ const { title, description, date, href } = Astro.props;
     border-radius: 0.35rem;
     opacity: 0.8;
   }
+
   h2 {
     margin: 0;
     font-size: 1.25rem;
@@ -50,10 +52,6 @@ const { title, description, date, href } = Astro.props;
   p {
     margin-top: 0.5rem;
     margin-bottom: 0;
-    color: #444;
-  }
-  .link-card:is(:hover, :focus-within) {
-    border-color: #666;
-    transition: border-color 0.5s;
+    color: #71717a;
   }
 </style>

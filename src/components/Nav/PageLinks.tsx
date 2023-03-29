@@ -45,7 +45,7 @@ const linkStyle = (url: string) => {
 function PageLinks({ currentUrl }: { currentUrl: string }) {
   const pathStyles = linkStyle(currentUrl);
   return (
-    <ul className="bg-black flex flex-col xs:flex-row gap-2 divide-solid divide-y-2 xs:divide-y-0 xs:divide-x-2 divide-slate-400">
+    <ul className="bg-bgDark flex flex-col xs:flex-row gap-2 divide-solid divide-y-2 xs:divide-y-0 xs:divide-x-2 divide-slate-400">
       {pages.map((l) => (
         <li key={l.href} className="px-4">
           <a

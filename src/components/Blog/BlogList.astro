@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import BlogCard from "@components/BlogCard.astro";
+import BlogCard from "./BlogCard.astro";
 import { toSlug } from "@utils/page";
 
 const posts = await getCollection("blog", (post) => {
