@@ -17,9 +17,11 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{toTitle(title)}</title>
   </head>
-  <body>
+  <body class="flex min-h-screen flex-col">
     <Header />
-    <slot />
+    <div class="grow flex flex-col">
+      <slot />
+    </div>
     <Footer />
   </body>
 
@@ -41,7 +43,7 @@ const { title } = Astro.props;
           position: absolute;
           right: 0px;
           transform: scaleX(0);
-          transform-origin: right top;
+          transform-origin: left top;
           transition: transform 0.25s cubic-bezier(0.2, 0.65, 0.3, 0.9) 0s;
         }
 

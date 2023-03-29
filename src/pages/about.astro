@@ -1,20 +1,30 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import PageTitle from "@components/PageTitle.astro";
+import EmailForm from "@components/EmailForm";
 
 export const prerender = true;
 ---
 
-<Layout title="about me.">
-  <main class="px-8">
-    <PageTitle periodClass={/*tw*/ "text-blue-500"}>about me</PageTitle>
-    <p>
-      I am an engineer originally from the UK, now based in Tokyo. <br />
-      I came to Japan for many of the same reasons that I am interested in technology
-      - to learn new things and challenge myself. <br />
-      You can find me all across the stack using Go, TypeScript, Python, and React.
-    </p>
+<Layout title="about">
+  <main class="flex flex-col md:flex-row w-full grow">
+    <div class="grow basis-1/2 p-8">
+      <PageTitle periodClass={/*tw*/ "text-blue-500"}>about</PageTitle>
+      <article class="">
+        <p class="text-lg text-slate-300">
+          My name is Conall, I am an engineer originally from the UK, now based
+          in Tokyo. <br />
+          I came to Japan for many of the same reasons that I am interested in technology
+          - to learn new things and challenge myself. You can find me all across
+          the stack using Go, TypeScript, Python, and React.
+        </p>
+      </article>
+    </div>
+    <div class="bg-blue-500 grow basis-1/2 p-8">
+      <section id="contact">
+        <PageTitle periodClass={/*tw*/ "text-slate-700"}>contact</PageTitle>
+        <EmailForm />
+      </section>
+    </div>
   </main>
 </Layout>
-
-<style></style>
