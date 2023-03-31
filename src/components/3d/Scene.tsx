@@ -1,15 +1,12 @@
 /* eslint-disable react/no-unknown-property */
 import {
-  CameraControls,
-  Html,
   Loader,
   OrbitControls,
   PerspectiveCamera,
   Stage,
-  useScroll,
 } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { PropsWithChildren, Suspense, useRef, useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import { PropsWithChildren, Suspense } from "react";
 import PC from "./models/PC";
 import Room from "./models/Room";
 
@@ -33,11 +30,8 @@ function Scene({ children }: PropsWithChildren) {
 }
 
 export const BasicScene = () => {
-  const controls = useRef<CameraControls>(null);
-  console.log(controls.current);
   return (
     <Scene>
-      <CameraControls ref={controls} enabled={false} />
       <ambientLight intensity={0.1} />
       <directionalLight color="white" position={[0, 5, 0]} intensity={0.1} />
       <Stage
@@ -53,15 +47,15 @@ export const BasicScene = () => {
         environment="apartment"
       >
         <PC />
-        <Room controls={controls} />
+        <Room />
         <axesHelper scale={7} />
         <gridHelper />
       </Stage>
       <OrbitControls
         minPolarAngle={Math.PI / 4}
         maxPolarAngle={Math.PI / 2}
-        minAzimuthAngle={Math.PI / 2}
-        maxAzimuthAngle={Math.PI}
+        minAzimuthAngle={Math.PI / 16}
+        maxAzimuthAngle={Math.PI / 2}
         makeDefault
       />
       <PerspectiveCamera makeDefault />

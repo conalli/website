@@ -8,9 +8,8 @@ title: Isometric Japanese Room
 */
 
 import type * as THREE from "three";
-import { CameraControls, Html, useGLTF } from "@react-three/drei";
+import { Html, useGLTF } from "@react-three/drei";
 import type { GLTF } from "three-stdlib";
-import type { RefObject } from "react";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -21,18 +20,13 @@ type GLTFResult = GLTF & {
   };
 };
 
-function Room(
-  props: JSX.IntrinsicElements["group"] & {
-    controls: RefObject<CameraControls>;
-  }
-) {
+function Room(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF(
     "/models/room/isometric_japanese_room.glb"
   ) as GLTFResult;
-  const { controls } = props;
+
   const handleClick = () => {
-    controls.current?.rotate(Math.PI / 4, 0, true);
-    console.log(controls);
+    console.log("hello");
   };
   return (
     <group {...props} dispose={null} scale={0.5}>
