@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import PageTitle from "@components/PageTitle.astro";
+import Projects from "@components/Projects/Projects.astro";
 
 export const prerender = true;
 ---
@@ -8,5 +9,6 @@ export const prerender = true;
 <Layout title="projects">
   <main class="p-8">
     <PageTitle periodClass={/*tw*/ "text-green-500"}>projects</PageTitle>
+    <Projects />
   </main>
 </Layout>
