@@ -8,6 +8,15 @@ module.exports = {
       },
       screens: {
         xs: "480px",
+        tall: { raw: "(min-height: 740px) and (max-width: 480px)" },
+      },
+      gridTemplateColumns: {
+        mobileProjects: "repeat(12, minmax(0, 1fr))",
+        projects: "repeat(12, minmax(0, 1fr))",
+      },
+      gridTemplateRows: {
+        mobileProjects: "repeat(10, minmax(0, 0.25fr))",
+        projects: "repeat(6, minmax(0, 0.5fr))",
       },
       keyframes: {
         fadeIn: {
