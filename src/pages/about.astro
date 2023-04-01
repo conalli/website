@@ -9,7 +9,7 @@ export const prerender = true;
 <Layout title="about">
   <main class="flex flex-col md:flex-row w-full grow">
     <div class="grow basis-1/2 p-8">
-      <PageTitle periodClass={/*tw*/ "text-blue-500"}>about</PageTitle>
+      <PageTitle text={"about"} periodClass={/*tw*/ "text-blue-500"} />
       <article class="">
         <p class="text-lg text-slate-300">
           My name is Conall, I am an engineer originally from the UK, now based
@@ -22,7 +22,7 @@ export const prerender = true;
     </div>
     <div class="bg-blue-500 grow basis-1/2 p-8">
       <section id="contact">
-        <PageTitle periodClass={/*tw*/ "text-slate-700"}>contact</PageTitle>
+        <PageTitle text="contact" periodClass={/*tw*/ "text-slate-700"} />
         <EmailForm />
       </section>
     </div>

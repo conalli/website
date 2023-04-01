@@ -36,11 +36,10 @@ const { Content } = await post.render();
     <article class="w-full lg:w-[50%] m-auto py-6">
       <header>
         <PageTitle
+          text={post.data.title}
           textClass={/*tw*/ "text-4xl sm:text-6xl font-serif font-bold"}
           periodClass={/*tw*/ "text-yellow-500"}
-        >
-          {post.data.title}
-        </PageTitle>
+        />
         <p class="text-xl text-zinc-400">{post.data.description}</p>
         <p class="text-md text-yellow-500">
           {post.data.publishDate.toLocaleDateString("ja-JP")}

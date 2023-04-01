@@ -1,15 +1,18 @@
 ---
 export interface Props {
+  text: string;
   textClass?: string;
   periodClass?: string;
 }
-const { textClass, periodClass } = Astro.props;
-const text =
-  textClass ??
-  /*tw*/ "text-6xl xs:text-8xl font-serif font-bold w-full lg:w-[50%] m-auto pb-6";
-const period = periodClass ?? "";
+const { text, textClass, periodClass } = Astro.props;
+const styles = {
+  text:
+    textClass ??
+    /*tw*/ "text-6xl xs:text-8xl font-serif font-bold w-full lg:w-[50%] m-auto pb-6",
+  period: periodClass ?? "",
+};
 ---
 
-<h1 class={text}>
-  <slot /><span class={period}>.</span>
+<h1 class={styles.text}>
+  {text}<span class={styles.period}>.</span>
 </h1>
