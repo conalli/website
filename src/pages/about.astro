@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import { Image } from "astro:assets";
 import PageTitle from "@components/PageTitle.astro";
 import EmailForm from "@components/EmailForm";
 
@@ -10,13 +11,27 @@ export const prerender = true;
   <main class="flex flex-col md:flex-row w-full grow">
     <div class="grow basis-1/2 p-8">
       <PageTitle text={"about"} periodClass={/*tw*/ "text-blue-500"} />
-      <article class="">
+      <div class="w-full flex jusitfy-center items-center">
+        <Image
+          class="rounded-full mx-auto py-4 w-[200px] h-[220px] md:w-[300px] md:h-[320px]"
+          src="/about/Conall.jpg"
+          alt="picture of Conall"
+          width={300}
+          height={300}
+        />
+      </div>
+      <article class="w-4/5 mx-auto flex flex-col gap-2">
         <p class="text-lg text-slate-300">
           My name is Conall, I am an engineer originally from the UK, now based
-          in Tokyo. <br />
-          I came to Japan for many of the same reasons that I am interested in technology
-          - to learn new things and challenge myself. You can find me all across
-          the stack using Go, TypeScript, Python, and React.
+          in Tokyo.
+          <p class="text-lg text-slate-300">
+            I came to Japan for many of the same reasons that I am interested in
+            technology - to learn new things and challenge myself.
+          </p>
+          <p class="text-lg text-slate-300">
+            You can find me all across the stack using Go, TypeScript, Python,
+            and React.
+          </p>
         </p>
       </article>
     </div>

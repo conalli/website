@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { PaperPlaneIcon } from "@radix-ui/react-icons";
 
 const sendEmail = () => {
   console.log("sent email");
@@ -13,12 +14,12 @@ function EmailForm() {
     message: "",
   });
   return (
-    <div className="">
+    <div className="py-6">
       <form
         ref={form}
         autoComplete="off"
         onSubmit={sendEmail}
-        className="flex flex-col w-full"
+        className="flex flex-col gap-4 w-full items-between"
       >
         <label className="text-lg py-2 flex gap-10">
           Your name.
@@ -27,7 +28,7 @@ function EmailForm() {
             type="text"
             required
             placeholder="name"
-            className="rounded-sm"
+            className="rounded-sm text-black  w-3/5"
             value={messageText.name}
             onChange={(e) =>
               setMessageText((prev) => {
@@ -46,7 +47,7 @@ function EmailForm() {
             type="email"
             required
             placeholder="email"
-            className="rounded-sm"
+            className="rounded-sm text-black w-3/5"
             value={messageText.email}
             onChange={(e) =>
               setMessageText((prev) => {
@@ -65,7 +66,7 @@ function EmailForm() {
             required
             name="message"
             placeholder="message"
-            className="rounded-sm"
+            className="rounded-sm text-black  w-3/5"
             value={messageText.message}
             onChange={(e) =>
               setMessageText((prev) => {
@@ -78,11 +79,11 @@ function EmailForm() {
           />
         </label>
         <motion.button
-          className="rounded-sm bg-white text-blue-500 w-10 ml-48"
+          className="rounded bg-black text-white py-2 px-4 mx-auto flex items-center gap-2"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          Send
+          Send <PaperPlaneIcon className="" height={15} width={15} />
         </motion.button>
       </form>
     </div>
