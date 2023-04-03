@@ -1,7 +1,9 @@
 ---
 import FooterLinks from "./FooterLinks";
+const url = Astro.url.pathname;
+const bg = url === "/" ? "bg-transparent" : "bg-bgDark";
 ---
 
-<footer class="py-2 w-full mx-auto fixed bottom-0 bg-bgDark">
+<footer class={bg + " py-2 w-full mx-auto fixed bottom-0"}>
   <FooterLinks client:idle />
 </footer>
