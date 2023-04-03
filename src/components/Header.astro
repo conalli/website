@@ -1,15 +1,39 @@
 ---
 import Nav from "./Nav/NavBar";
 const url = Astro.url.pathname;
+const bg = url === "/" ? "bg-transparent" : "bg-bgDark";
 ---
 
 <header
-  class="bg-bgDark flex justify-between w-screen pt-4 pb-1 px-8 animate-fadeIn sticky top-0"
+  class={bg +
+    " flex justify-between w-screen pt-4 pb-1 px-8 animate-fadeIn sticky top-0 z-10"}
 >
-  <a href="/" class="rounded-full"
+  <a id="Ci-icon" href="/" class="rounded-full under"
     ><span class="text-3xl font-serif font-bold"
       >C<span class="text-gray-400 mx-[0.25rem]">.</span>i</span
     >
   </a>
   <Nav client:load currentUrl={url} />
 </header>
+<script>
+  const options = [
+    "after:bg-red-500",
+    "after:bg-green-500",
+    "after:bg-yellow-500",
+    "after:bg-blue-500",
+  ];
+  const icon = document.querySelector("#Ci-icon");
+  if (icon) {
+    let idx = Math.floor(Math.random() * options.length);
+    const addUnderlineColor = (e: Event) => {
+      e.stopPropagation();
+      idx = Math.floor(Math.random() * options.length);
+      icon.classList.add(options[idx]);
+    };
+    icon.addEventListener("mouseenter", addUnderlineColor);
+    icon.addEventListener("mouseleave", (e: Event) => {
+      e.stopPropagation();
+      icon.classList.remove(options[idx]);
+    });
+  }
+</script>

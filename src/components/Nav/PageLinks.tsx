@@ -37,15 +37,19 @@ const pages: PageLink[] = [
 const isCurrentURL = (url: string, pathname: string) => url === pathname;
 const linkStyle = (url: string) => {
   return (pathname: string) =>
-    isCurrentURL(url, pathname)
-      ? /*tw*/ "underline cursor-default shadow"
-      : "under";
+    isCurrentURL(url, pathname) ? /*tw*/ "underline cursor-default" : "under";
 };
 
 function PageLinks({ currentUrl }: { currentUrl: string }) {
+  const bg = currentUrl === "/" ? "bg-transparent" : "bg-bgDark";
   const pathStyles = linkStyle(currentUrl);
   return (
-    <ul className="bg-bgDark flex flex-col xs:flex-row gap-2 divide-solid divide-y-2 xs:divide-y-0 xs:divide-x-2 divide-slate-400">
+    <ul
+      className={
+        bg +
+        " flex flex-col xs:flex-row gap-2 divide-solid divide-y-2 xs:divide-y-0 xs:divide-x-2 divide-slate-400"
+      }
+    >
       {pages.map((l) => (
         <li key={l.href} className="px-4">
           <a

@@ -15,7 +15,7 @@ function MobileNav({ currentUrl }: { currentUrl: string }) {
           </button>
         </Popover.Trigger>
         <Popover.Portal>
-          <Popover.Content className="">
+          <Popover.Content className="z-20">
             <Popover.Arrow />
             <AnimatePresence>
               <motion.div
