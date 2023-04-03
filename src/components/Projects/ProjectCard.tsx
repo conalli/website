@@ -1,7 +1,7 @@
 import { combineStyles } from "@utils/styles";
-import type { ProjectInfo } from "@utils/data";
+import type { ProjectData } from "@utils/projectData";
 
-function ProjectCard({ project }: { project: ProjectInfo }) {
+function ProjectCard({ project }: { project: ProjectData }) {
   return (
     <div
       className={combineStyles(

@@ -1,4 +1,4 @@
-export type ProjectInfo = {
+export type ProjectData = {
   title: string;
   href: string;
   styles: {
@@ -7,7 +7,7 @@ export type ProjectInfo = {
   };
 };
 
-export const projects: ProjectInfo[] = [
+export const projects: ProjectData[] = [
   {
     title: "Bookshelf",
     href: "/projects/bookshelf",
