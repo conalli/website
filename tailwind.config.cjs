@@ -18,7 +18,7 @@ module.exports = {
       gridTemplateRows: {
         mobileProjects: "repeat(10, minmax(0, 0.25fr))",
         tallMobile: "repeat(12, minmax(0, 0.3fr))",
-        projects: "repeat(14, minmax(0, 0.25fr))",
+        projects: "repeat(12, minmax(0, 0.25fr))",
       },
       keyframes: {
         fadeIn: {

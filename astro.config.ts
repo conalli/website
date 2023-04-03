@@ -1,9 +1,10 @@
 import { defineConfig } from "astro/config";
-
 import react from "@astrojs/react";
 
-// https://astro.build/config
 import tailwind from "@astrojs/tailwind";
+
+// https://astro.build/config
+import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,4 +13,7 @@ export default defineConfig({
     assets: true,
   },
   integrations: [react(), tailwind()],
+  adapter: node({
+    mode: "standalone",
+  }),
 });
