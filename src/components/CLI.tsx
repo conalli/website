@@ -1,3 +1,4 @@
+import { welcome } from "@utils/cli";
 import { useState } from "react";
 
 const pages = "/ /projects /blog /about";
@@ -28,19 +29,27 @@ function CLI() {
     }
   }
   return (
-    <div className="bg-black w-full h-full font-mono relative">
-      {output.length > 0 &&
-        output.map((o, idx) => (
-          <p key={`${idx}${o}`} className=" bg-black text-[0.25rem]">
-            {o}
-          </p>
-        ))}
-
-      <input
-        className="font-bold text-[0.25rem] bg-black absolute bottom-0 w-full caret-green-500"
+    <div className="bg-black w-full h-full font-mono text-green-500">
+      <div className="h-3/5 p-[0.1rem]" onBlur={(e) => console.log(e)}>
+        <pre className="text-[0.15rem] ">{welcome}</pre>
+        <p className="text-[0.2rem] py-[0.1rem]">
+          I&rsquo;m Conall, a software engineer based in Tokyo.
+        </p>
+        <p className="text-[0.2rem] py-[0.1rem]">
+          Feel free to take a look around
+        </p>
+        {output.length > 0 &&
+          output.map((o, idx) => (
+            <p key={`${idx}${o}`} className=" bg-black text-[0.25rem]">
+              {o}
+            </p>
+          ))}
+        <p className="text-[0.2rem] py-[0.1rem]">{command}</p>
+      </div>
+      {/* <input
+        className="font-bold text-[0.25rem] bg-black h-1/5 w-full caret-green-500"
         onChange={(e) => setCommand(e.target.value)}
-        value={command}
-      />
+      /> */}
     </div>
   );
 }

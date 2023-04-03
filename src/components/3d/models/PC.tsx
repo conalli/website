@@ -79,9 +79,9 @@ function PC(props: JSX.IntrinsicElements["group"]) {
     "/models/personal_computer/personal_computer.glb"
   ) as GLTFResult;
   return (
-    <group {...props} dispose={null} scale={0.6}>
+    <group {...props} dispose={null}>
       <group
-        position={[0, 6, 5]}
+        position={[0, 0, 0]}
         rotation={[-Math.PI / 2, 0, Math.PI / 2]}
         scale={0.01}
       >
@@ -111,16 +111,15 @@ function PC(props: JSX.IntrinsicElements["group"]) {
               // occlude
               castShadow
               receiveShadow
-              rotation={[0, 1.5, 1.565]}
-              position={[1.2, -0.05, 0.1]}
+              rotation={[0, 1.5, 1.575]}
+              position={[0.8, -0.25, 0]}
               transform
             >
               <div
                 style={{
-                  width: 64,
+                  width: 68,
                   height: 48,
                 }}
-                onPointerDown={(e) => e.stopPropagation()}
               >
                 <CLI />
               </div>

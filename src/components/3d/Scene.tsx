@@ -1,20 +1,25 @@
 /* eslint-disable react/no-unknown-property */
-import {
-  Loader,
-  OrbitControls,
-  PerspectiveCamera,
-  Stage,
-} from "@react-three/drei";
+import { Loader, OrbitControls, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { PropsWithChildren, Suspense } from "react";
 import PC from "./models/PC";
-import Room from "./models/Room";
+import { DEG2RAD } from "three/src/math/MathUtils";
+import { Plant } from "./models/Plant";
+import { EffectComposer, Vignette } from "@react-three/postprocessing";
+import { useMousePosition } from "src/hooks/useMousePosition";
+import { useWindowDimensions } from "src/hooks/useWindowDimensions";
 
 function Scene({ children }: PropsWithChildren) {
+  const { x, y } = useMousePosition();
+  const { width, height } = useWindowDimensions();
+  const r = x / width;
+  const g = y / height;
+  const b = 1 - (r + g);
   if (!children) return null;
   return (
-    <div className="flex w-[80vw] h-[80vh] m-auto bg-slate-400">
+    <div className="flex absolute top-0 z-0 w-[100vw] h-[100vh] p-0 m-auto">
       <Canvas shadows>
+        <color attach="background" args={[r, g, b]} />
         <Suspense fallback={null}>{children}</Suspense>
       </Canvas>
       <Loader
@@ -32,10 +37,10 @@ function Scene({ children }: PropsWithChildren) {
 export const BasicScene = () => {
   return (
     <Scene>
-      <ambientLight intensity={0.1} />
-      <directionalLight color="white" position={[0, 5, 0]} intensity={0.1} />
+      <ambientLight intensity={0.5} />
+      <directionalLight color="red" position={[0, 10, 0]} intensity={0.5} />
       <Stage
-        intensity={0.5}
+        intensity={0.1}
         preset="rembrandt"
         shadows={{
           type: "accumulative",
@@ -43,22 +48,22 @@ export const BasicScene = () => {
           colorBlend: 2,
           opacity: 2,
         }}
-        adjustCamera={1}
+        adjustCamera={0.8}
         environment="apartment"
       >
-        <PC />
-        <Room />
-        <axesHelper scale={7} />
-        <gridHelper />
+        <PC rotation={[0, DEG2RAD * 180, 0]} scale={0.6} />
+        <Plant position={[1.6, 0, 1]} scale={0.2} />
+        <EffectComposer>
+          <Vignette eskil={false} offset={0.1} darkness={0.8} />
+        </EffectComposer>
       </Stage>
       <OrbitControls
         minPolarAngle={Math.PI / 4}
         maxPolarAngle={Math.PI / 2}
-        minAzimuthAngle={Math.PI / 16}
-        maxAzimuthAngle={Math.PI / 2}
+        minAzimuthAngle={DEG2RAD * -45}
+        maxAzimuthAngle={DEG2RAD * 45}
         makeDefault
       />
-      <PerspectiveCamera makeDefault />
     </Scene>
   );
 };
