@@ -34,7 +34,7 @@ function Scene({ children }: PropsWithChildren) {
   );
 }
 
-export const BasicScene = () => {
+const HomeScene = () => {
   return (
     <Scene>
       <ambientLight intensity={0.5} />
@@ -68,4 +68,4 @@ export const BasicScene = () => {
   );
 };
 
-export default Scene;
+export default HomeScene;

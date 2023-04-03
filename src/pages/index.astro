@@ -1,13 +1,11 @@
 ---
 import Layout from "@layouts/Layout.astro";
-// import PageTitle from "@components/PageTitle.astro";
-import { BasicScene } from "@components/3d/Scene";
+import HomeScene from "@components/3d/Scene";
 export const prerender = true;
-// <PageTitle periodClass={/*tw*/ "text-red-500"}>home</PageTitle>
 ---
 
 <Layout title="">
-  <main class="p-8">
-    <BasicScene client:only="react" />
+  <main class="">
+    <HomeScene client:only="react" />
   </main>
 </Layout>
