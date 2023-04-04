@@ -8,6 +8,11 @@ import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
+  markdown: {
+    shikiConfig: {
+      theme: "monokai",
+    },
+  },
   output: "server",
   experimental: {
     assets: true,

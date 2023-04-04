@@ -9,11 +9,15 @@ export const prerender = true;
 
 <Layout title="about">
   <main class="flex flex-col md:flex-row w-full grow">
-    <div class="grow basis-1/2 p-8">
-      <PageTitle text={"about"} periodClass={/*tw*/ "text-blue-500"} />
+    <div class="grow basis-1/2 pl-8 pr-8 sm:pr-4 py-8">
+      <PageTitle
+        text={"about"}
+        textClass={"text-6xl xs:text-8xl font-serif font-bold w-full flex justify-center pb-6"}
+        periodClass={/*tw*/ "text-blue-500"}
+      />
       <div class="w-full flex jusitfy-center items-center">
         <Image
-          class="rounded-full mx-auto py-4 w-[200px] h-[220px] md:w-[300px] md:h-[320px]"
+          class="rounded-full shadow-lg mx-auto py-4 w-[200px] h-[220px] md:w-[300px] md:h-[320px]"
           src="/about/Conall.jpg"
           alt="picture of Conall"
           width={300}
@@ -35,9 +39,13 @@ export const prerender = true;
         </p>
       </article>
     </div>
-    <div class="bg-blue-500 grow basis-1/2 p-8">
+    <div class="bg-blue-500 grow basis-1/2 pr-8 pl-8 sm:pl-4 py-8">
       <section id="contact">
-        <PageTitle text="contact" periodClass={/*tw*/ "text-slate-700"} />
+        <PageTitle
+          text="contact"
+          textClass={"text-6xl xs:text-8xl font-serif font-bold w-full flex justify-center pb-6"}
+          periodClass={/*tw*/ "text-slate-700"}
+        />
         <EmailForm />
       </section>
     </div>

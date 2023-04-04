@@ -14,21 +14,21 @@ function EmailForm() {
     message: "",
   });
   return (
-    <div className="py-6">
+    <div className="pb-6 pt-10 flex flex-col items-center">
       <form
         ref={form}
         autoComplete="off"
         onSubmit={sendEmail}
-        className="flex flex-col gap-4 w-full items-between"
+        className="flex flex-col gap-4 w-4/5 items-between justify-center"
       >
         <label className="text-lg py-2 flex gap-10">
-          Your name.
+          name:
           <input
             name="name"
             type="text"
             required
             placeholder="name"
-            className="rounded-sm text-black  w-3/5"
+            className="rounded-sm text-black w-3/5 grow px-1 shadow-lg"
             value={messageText.name}
             onChange={(e) =>
               setMessageText((prev) => {
@@ -41,13 +41,13 @@ function EmailForm() {
           />
         </label>
         <label className="text-lg py-2 flex gap-10">
-          Your email.
+          email:
           <input
             name="name"
             type="email"
             required
             placeholder="email"
-            className="rounded-sm text-black w-3/5"
+            className="rounded-sm text-black w-3/5 grow px-1 shadow-lg"
             value={messageText.email}
             onChange={(e) =>
               setMessageText((prev) => {
@@ -60,13 +60,13 @@ function EmailForm() {
           />
         </label>
         <label className="text-lg py-2 flex gap-3">
-          Your message.
+          message:
           <textarea
             rows={6}
             required
             name="message"
             placeholder="message"
-            className="rounded-sm text-black  w-3/5"
+            className="rounded-sm text-black w-3/5 grow px-1 shadow-lg"
             value={messageText.message}
             onChange={(e) =>
               setMessageText((prev) => {
@@ -79,7 +79,7 @@ function EmailForm() {
           />
         </label>
         <motion.button
-          className="rounded bg-black text-white py-2 px-4 mx-auto flex items-center gap-2"
+          className="rounded bg-black text-white py-2 px-4 mx-auto flex items-center gap-2 shadow-lg"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
