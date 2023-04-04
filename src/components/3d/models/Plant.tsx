@@ -40,7 +40,7 @@ type GLTFResult = GLTF & {
 
 export function Plant(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF(
-    "/models/plant/low_poly_plant.glb"
+    "/models/plant/scene.gltf"
   ) as GLTFResult;
   return (
     <group {...props} dispose={null}>
@@ -111,4 +111,4 @@ export function Plant(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/models/plant/low_poly_plant.glb");
+useGLTF.preload("/models/plant/scene.gltf");

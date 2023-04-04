@@ -76,7 +76,7 @@ type GLTFResult = GLTF & {
 
 function PC(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF(
-    "/models/personal_computer/personal_computer.glb"
+    "/models/personal_computer/scene.gltf"
   ) as GLTFResult;
   return (
     <group {...props} dispose={null}>
@@ -373,6 +373,6 @@ export function PrimitivePC(props: { [properties: string]: unknown }) {
   return <primitive {...props} object={model.scene} />;
 }
 
-useGLTF.preload("/models/personal_computer/personal_computer.glb");
+useGLTF.preload("/models/personal_computer/scene.gltf");
 
 export default PC;
