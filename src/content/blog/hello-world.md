@@ -1,6 +1,6 @@
 ---
 # draft(false), title, description, publishDate, image?, tags? 
-draft: true
+draft: false
 title: Hello, World
 description: Welcome to my blog.
 publishDate: 2023-03-25
@@ -11,9 +11,9 @@ image:
 
 ### Yes, I know
 
-First of all, welcome to my my tech blog. My name is Conall, I'm a software engineer based in Tokyo.
+First of all, welcome to my my tech blog. My name is Conall, I'm a British software engineer based in Tokyo.
 
-While i'm sure it's some kind of cardinal sin to call your first post "Hello, World", I felt like following tradition this time. I can only ask, in advance, for your forgiveness.
+While it's certainly cliché, and I'm sure some kind of cardinal tech sin, to call your first post "Hello, World", I felt like following tradition this time. I hope you will indulge me.
 
 ### Let's Go
 
@@ -22,7 +22,6 @@ The picture above shows the classic hello world in C, but I'm more of a gopher m
 With go downloaded, change directory into where you want to work and run the following commands.
 
 ``` sh
-#!/bin/sh
 mkdir hello_world
 cd hello_world && touch hello.go
 ```
