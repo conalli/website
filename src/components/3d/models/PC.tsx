@@ -11,7 +11,7 @@ Title: Personal Computer
 import type * as THREE from "three";
 import { Html, useGLTF } from "@react-three/drei";
 import type { GLTF } from "three-stdlib";
-import CLI from "@components/CLI";
+import CLI from "@components/3d/CLI";
 
 type GLTFResult = GLTF & {
   nodes: {
