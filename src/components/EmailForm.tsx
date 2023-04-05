@@ -1,24 +1,28 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { PaperPlaneIcon } from "@radix-ui/react-icons";
-
-const sendEmail = () => {
-  console.log("sent email");
-};
+import {
+  CheckCircledIcon,
+  CrossCircledIcon,
+  MinusCircledIcon,
+  PaperPlaneIcon,
+} from "@radix-ui/react-icons";
+import type { EmailData } from "src/hooks/useEmail";
+import { useEmail } from "src/hooks/useEmail";
 
 function EmailForm() {
-  const form = useRef<HTMLFormElement>(null);
-  const [messageText, setMessageText] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [email, setEmail] = useState({} as EmailData);
+  const { send, isError, isLoading, isSuccess } = useEmail();
+  console.log(isLoading, isSuccess, isError);
+  console.log(email);
   return (
     <div className="pb-6 pt-10 flex flex-col items-center">
       <form
-        ref={form}
-        autoComplete="off"
-        onSubmit={sendEmail}
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (!email.email || !email.message || !email.name) return;
+          send(email);
+          setEmail({} as EmailData);
+        }}
         className="flex flex-col gap-4 w-4/5 items-between justify-center"
       >
         <label className="text-lg py-2 flex gap-10">
@@ -27,11 +31,12 @@ function EmailForm() {
             name="name"
             type="text"
             required
+            value={email.name}
             placeholder="name"
             className="rounded-sm text-black w-3/5 grow px-1 shadow-lg"
-            value={messageText.name}
+            // value={email.name}
             onChange={(e) =>
-              setMessageText((prev) => {
+              setEmail((prev) => {
                 return {
                   ...prev,
                   name: e.target.value,
@@ -43,17 +48,36 @@ function EmailForm() {
         <label className="text-lg py-2 flex gap-10">
           email:
           <input
-            name="name"
+            name="email"
             type="email"
             required
             placeholder="email"
             className="rounded-sm text-black w-3/5 grow px-1 shadow-lg"
-            value={messageText.email}
+            // value={email.email}
             onChange={(e) =>
-              setMessageText((prev) => {
+              setEmail((prev) => {
                 return {
                   ...prev,
                   email: e.target.value,
+                };
+              })
+            }
+          />
+        </label>
+        <label className="text-lg py-2 flex gap-6">
+          subject:
+          <input
+            name="subject"
+            type="text"
+            required
+            placeholder="subject"
+            className="rounded-sm text-black w-3/5 grow px-1 shadow-lg"
+            // value={email.email}
+            onChange={(e) =>
+              setEmail((prev) => {
+                return {
+                  ...prev,
+                  subject: e.target.value,
                 };
               })
             }
@@ -67,9 +91,9 @@ function EmailForm() {
             name="message"
             placeholder="message"
             className="rounded-sm text-black w-3/5 grow px-1 shadow-lg"
-            value={messageText.message}
+            // value={email.message}
             onChange={(e) =>
-              setMessageText((prev) => {
+              setEmail((prev) => {
                 return {
                   ...prev,
                   message: e.target.value,
@@ -78,13 +102,29 @@ function EmailForm() {
             }
           />
         </label>
-        <motion.button
-          className="rounded bg-black text-white py-2 px-4 mx-auto flex items-center gap-2 shadow-lg"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          Send <PaperPlaneIcon className="" height={15} width={15} />
-        </motion.button>
+        <div className="flex items-center">
+          <motion.button
+            disabled={isLoading}
+            className="rounded bg-black text-white py-2 px-4 mx-auto flex items-center gap-2 shadow-lg"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Send <PaperPlaneIcon className="" height={15} width={15} />
+          </motion.button>
+          {isError && (
+            <CrossCircledIcon className="bg-red-500" height={15} width={15} />
+          )}
+          {isSuccess && (
+            <CheckCircledIcon className="bg-green-500" height={15} width={15} />
+          )}
+          {isLoading && (
+            <MinusCircledIcon
+              className="bg-yellow-500"
+              height={15}
+              width={15}
+            />
+          )}
+        </div>
       </form>
     </div>
   );
