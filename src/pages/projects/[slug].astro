@@ -1,0 +1,118 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import PageTitle from "@components/PageTitle.astro";
+import { toSlug } from "@utils/page";
+
+export const prerender = true;
+export const getStaticPaths = async () => {
+  const projects = await getCollection("projects");
+  return projects.map((project) => {
+    return {
+      params: {
+        slug: toSlug(project.data.title),
+      },
+      props: {
+        project,
+      },
+    };
+  });
+};
+
+export interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<Layout title={project.data.title}>
+  <main class="p-8 flex flex-col">
+    <header class="pb-6">
+      <a href="/projects" class="under after:bg-green-500 font-bold"
+        >&larr; Back to Projects</a
+      >
+      <PageTitle
+        text={project.data.title}
+        textClass={"text-[3.5rem] xs:text-6xl font-serif font-bold w-full flex justify-center"}
+        periodClass={"text-green-500"}
+      />
+      <h3 class="text-gray-300 pb-4 w-full flex justify-center">
+        {project.data.description}
+      </h3>
+    </header>
+    <section class="flex flex-col md:flex-row">
+      <article class="md:w-1/2">
+        <h2 class="text-4xl font-serif font-bold py-2">
+          Tech<span class="text-green-500">.</span>
+        </h2>
+        {
+          project.data.video && (
+            <div class="flex justify-center md:block py-4 relative pb-[56.4%]">
+              <iframe
+                class="absolute w-full h-full top-0 left-0 pr-8 md:pr-4"
+                src="https://www.youtube.com/embed/-XbyZeM_o1Y"
+                title="YouTube video player"
+                frame-border="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow-fullScreen
+              />
+            </div>
+          )
+        }
+        {
+          project.data.url && (
+            <div class="py-4">
+              <a
+                class="underline decoration-green-500"
+                href={project.data.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Try {project.data.title}
+              </a>
+            </div>
+          )
+        }
+        <section class="text-gray-300">
+          <section class="flex gap-4">
+            <h4>Repository:</h4>
+            {
+              project.data.repositories.map((repo) => (
+                <a
+                  class="underline decoration-green-500"
+                  href={repo.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {repo.name}
+                </a>
+              ))
+            }
+          </section>
+          <section class="py-2">
+            <h4>Tech Stack:</h4>
+            <ul class="max-w-4/5 flex flex-wrap">
+              {project.data.stack.map((tech) => <li class="pr-2">{tech}</li>)}
+            </ul>
+          </section>
+        </section>
+      </article>
+      <article class="project-content md:w-1/2">
+        <h2 class="text-4xl font-serif font-bold py-2">
+          About<span class="text-green-500">.</span>
+        </h2>
+        <Content />
+      </article>
+    </section>
+  </main>
+</Layout>
+<style lang="scss" is:global>
+  .project-content {
+    p {
+      color: #a1a1aa;
+      padding: 0.5rem 0;
+    }
+  }
+</style>
