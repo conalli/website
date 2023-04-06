@@ -12,6 +12,8 @@ import type * as THREE from "three";
 import { Html, useGLTF } from "@react-three/drei";
 import type { GLTF } from "three-stdlib";
 import CLI from "@components/3d/CLI";
+import { loadingAtom } from "src/store/loading";
+import { useStore } from "@nanostores/react";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -78,6 +80,7 @@ function PC(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF(
     "/models/personal_computer/scene.gltf"
   ) as GLTFResult;
+  const loading = useStore(loadingAtom);
   return (
     <group {...props} dispose={null}>
       <group
@@ -108,7 +111,6 @@ function PC(props: JSX.IntrinsicElements["group"]) {
               material={materials.screen}
             /> */}
             <Html
-              // occlude
               castShadow
               receiveShadow
               rotation={[0, 1.5, 1.575]}
@@ -121,7 +123,7 @@ function PC(props: JSX.IntrinsicElements["group"]) {
                   height: 48,
                 }}
               >
-                <CLI />
+                {!loading && <CLI />}
               </div>
             </Html>
             <mesh

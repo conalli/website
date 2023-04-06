@@ -1,15 +1,19 @@
 /* eslint-disable react/no-unknown-property */
-import { Loader, OrbitControls, Stage } from "@react-three/drei";
+import { OrbitControls, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { PropsWithChildren, Suspense } from "react";
-import PC from "./models/PC";
 import { DEG2RAD } from "three/src/math/MathUtils";
-import { Plant } from "./models/Plant";
 import { EffectComposer, Vignette } from "@react-three/postprocessing";
-import { useMousePosition } from "src/hooks/useMousePosition";
-import { useWindowDimensions } from "src/hooks/useWindowDimensions";
+import { useMousePosition, useWindowDimensions } from "src/hooks";
+import Loader from "./Loader";
+import { PC, Plant } from "./models";
+import { loadingAtom } from "src/store/loading";
+import { useStore } from "@nanostores/react";
+import { AnimatePresence, motion } from "framer-motion";
 
 function Scene({ children }: PropsWithChildren) {
+  const loading = useStore(loadingAtom);
+  console.log(loading);
   const { x, y } = useMousePosition();
   const { width, height } = useWindowDimensions();
   const r = x / width;
@@ -18,18 +22,22 @@ function Scene({ children }: PropsWithChildren) {
   if (!children) return null;
   return (
     <div className="flex absolute top-0 z-0 w-[100vw] h-[100vh] p-0 m-auto">
-      <Canvas shadows>
-        <color attach="background" args={[r, g, b]} />
-        <Suspense fallback={null}>{children}</Suspense>
-      </Canvas>
-      <Loader
-        // containerStyles={} // Flex layout styles
-        // innerStyles={} // Inner container styles
-        // barStyles={} // Loading-bar styles
-        // dataStyles={} // Text styles
-        dataInterpolation={(p) => `Loading ${p.toFixed(2)}%`} // Text
-        initialState={(active) => active} // Initial black out state
-      />
+      <AnimatePresence>
+        <Canvas shadows key="3d-canvas">
+          <color attach="background" args={[r, g, b]} />
+          <Suspense fallback={null}>{children}</Suspense>
+        </Canvas>
+        {loading && (
+          <motion.div
+            key="loader"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, transition: { duration: 1 } }}
+          >
+            <Loader />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

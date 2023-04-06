@@ -38,7 +38,7 @@ type GLTFResult = GLTF & {
   };
 };
 
-export function Plant(props: JSX.IntrinsicElements["group"]) {
+function Plant(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF(
     "/models/plant/scene.gltf"
   ) as GLTFResult;
@@ -112,3 +112,5 @@ export function Plant(props: JSX.IntrinsicElements["group"]) {
 }
 
 useGLTF.preload("/models/plant/scene.gltf");
+
+export default Plant;
