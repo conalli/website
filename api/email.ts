@@ -16,7 +16,7 @@ type SendGridMessage = {
 
 sgMail.setApiKey(process.env.SENDGRID_APIKEY ?? "");
 
-export default async function async(
+export default async function email(
   request: VercelRequest,
   response: VercelResponse
 ) {
@@ -24,22 +24,27 @@ export default async function async(
     response.statusCode = 400;
     return response.end();
   }
-  const { email, name, subject, message } = JSON.parse(
-    request.body
-  ) as EmailData;
-  const msg: SendGridMessage = {
-    to: "contact@conalli.info",
-    from: "contact@conalli.info",
-    subject: subject ?? "",
-    text: `from - ${name}; reply to - ${email}; message - ${message}`,
-  };
   try {
-    sgMail.send(msg);
+    const { email, name, subject, message } = JSON.parse(
+      request.body
+    ) as EmailData;
+    const msg: SendGridMessage = {
+      to: "contact@conalli.info",
+      from: "contact@conalli.info",
+      subject: subject ?? "",
+      text: `from - ${name}; reply to - ${email}; message - ${message}`,
+    };
+    const res = await sgMail.send(msg);
+    console.log(res);
+    if (res[0].statusCode !== 200) {
+      response.statusCode = 400;
+      return response.send(JSON.stringify({ status: "error" }));
+    }
+    response.statusCode = 200;
+    return response.send(JSON.stringify({ status: "success" }));
   } catch (error) {
     console.error(error);
     response.statusCode = 400;
     return response.send(JSON.stringify({ status: "error" }));
   }
-  response.statusCode = 200;
-  return response.send(JSON.stringify({ status: "success" }));
 }
