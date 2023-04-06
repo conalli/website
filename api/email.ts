@@ -3,7 +3,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { EmailData } from "src/hooks";
 
 export const config = {
-  runtime: "serverless",
+  runtime: "nodejs",
 };
 
 type SendGridMessage = {
