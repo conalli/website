@@ -1,6 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
+    "module": "esnext",
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "baseUrl": ".",
