@@ -1,11 +1,14 @@
+import { z } from "astro/zod";
 import { useEffect, useState } from "react";
 
-export type EmailData = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
+export const emailSchema = z.object({
+  name: z.string().min(2).max(64),
+  email: z.string().email().max(64),
+  subject: z.string().max(256).optional(),
+  message: z.string().min(10),
+});
+
+export type EmailData = z.infer<typeof emailSchema>;
 
 const sendEmail = async (data: EmailData) => {
   const resp = await fetch("/api/email", {
