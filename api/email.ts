@@ -14,7 +14,7 @@ type SendGridMessage = {
   html?: string;
 };
 
-sgMail.setApiKey(import.meta.env.SENDGRID_APIKEY);
+sgMail.setApiKey(process.env.SENDGRID_APIKEY ?? "");
 
 export default async function async(
   request: VercelRequest,
