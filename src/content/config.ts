@@ -21,10 +21,19 @@ const projectCollection = defineCollection({
     draft: z.boolean().default(false),
     title: z.string(),
     description: z.string(),
+    url: z.string().url().optional(),
+    repositories: z.array(
+      z.object({ name: z.string(), url: z.string().url() })
+    ),
     logo: image().optional(),
     video: z.string().url().optional(),
-    image: image().optional(),
-    imageAlt: z.string().optional(),
+    image: z
+      .object({
+        src: image(),
+        alt: z.string(),
+      })
+      .optional(),
+    stack: z.array(z.string()),
   }),
 });
 
