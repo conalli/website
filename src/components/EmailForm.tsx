@@ -16,18 +16,22 @@ function EmailForm() {
     register,
     handleSubmit,
     formState: { errors, isValid },
+    reset,
   } = useForm<EmailData>({
     resolver: zodResolver(emailSchema),
   });
+
   const { send, isError, isLoading, isSuccess } = useEmail();
+
   const buttonStyles = isValid
     ? /*tw*/ "bg-black text-white"
     : /*tw*/ "bg-gray-500 text-gray-100";
+
   const submitForm = async (data: EmailData): Promise<void> => {
     const email = data as EmailData;
-    console.log(email);
     if (!email.email || !email.message || !email.name) return;
     await send(email);
+    reset();
   };
 
   return (

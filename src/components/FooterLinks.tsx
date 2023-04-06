@@ -16,7 +16,12 @@ function FooterLinks() {
         whileTap={tapScale}
         className="hover:text-white w-1/4"
       >
-        <a href="/about#contact" className="font-serif flex justify-center">
+        <a
+          href="/about#contact"
+          className="font-serif flex justify-center"
+          target="_blank"
+          rel="noreferrer"
+        >
           contact<span className="text-blue-500">.</span>
         </a>
       </motion.li>
@@ -28,6 +33,8 @@ function FooterLinks() {
         <a
           href="https://github.com/conalli"
           className="flex justify-center"
+          target="_blank"
+          rel="noreferrer"
           title="Github"
         >
           <GitHubLogoIcon width={22} height={22} />
@@ -41,6 +48,8 @@ function FooterLinks() {
       >
         <a
           href="https://linkedin.com/in/conalli"
+          target="_blank"
+          rel="noreferrer"
           className="flex justify-center"
           title="LinkedIn"
         >
