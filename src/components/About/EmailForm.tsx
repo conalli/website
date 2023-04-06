@@ -41,7 +41,7 @@ function EmailForm() {
         className="flex flex-col gap-4 w-4/5 items-between justify-center"
       >
         <label className="text-lg py-2 flex gap-10">
-          name:
+          name*:
           <input
             type="text"
             {...register("name")}
@@ -51,7 +51,7 @@ function EmailForm() {
         </label>
 
         <label className="text-lg py-2 flex gap-10">
-          email:
+          email*:
           <input
             type="email"
             {...register("email")}
@@ -69,7 +69,7 @@ function EmailForm() {
           />
         </label>
         <label className="text-lg py-2 flex gap-3">
-          message:
+          message*:
           <textarea
             rows={6}
             {...register("message")}

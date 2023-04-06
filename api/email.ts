@@ -34,7 +34,7 @@ export default async function email(
     };
     const res = await sgMail.send(msg);
     console.log(res);
-    if (res[0].statusCode !== 200) {
+    if (res[0].statusCode >= 400) {
       response.statusCode = 400;
       return response.send(JSON.stringify({ status: "error" }));
     }
