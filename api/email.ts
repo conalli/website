@@ -25,9 +25,7 @@ export default async function email(
     return response.end();
   }
   try {
-    const { email, name, subject, message } = JSON.parse(
-      request.body
-    ) as EmailData;
+    const { email, name, subject, message } = request.body as EmailData;
     const msg: SendGridMessage = {
       to: "contact@conalli.info",
       from: "contact@conalli.info",
