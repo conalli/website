@@ -1,15 +1,15 @@
-import { motion } from "framer-motion";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   CheckCircledIcon,
   CrossCircledIcon,
   MinusCircledIcon,
   PaperPlaneIcon,
 } from "@radix-ui/react-icons";
-import { useEmail, EmailData, emailSchema } from "src/hooks";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import ErrorMessages from "./ErrorMessages";
 import { combineStyles } from "@utils/styles";
+import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
+import { EmailData, emailSchema, useEmail } from "src/hooks";
+import ErrorMessages from "./ErrorMessages";
 
 function EmailForm() {
   const {

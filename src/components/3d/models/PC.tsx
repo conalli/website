@@ -8,12 +8,12 @@ Source: https://sketchfab.com/3d-models/personal-computer-b943e06de72c4b2b9ac6b9
 Title: Personal Computer
 */
 
-import type * as THREE from "three";
-import { Html, useGLTF } from "@react-three/drei";
-import type { GLTF } from "three-stdlib";
 import CLI from "@components/3d/CLI";
-import { loadingAtom } from "src/store/loading";
 import { useStore } from "@nanostores/react";
+import { Html, useGLTF } from "@react-three/drei";
+import { loadingAtom } from "src/store/loading";
+import type * as THREE from "three";
+import type { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
   nodes: {

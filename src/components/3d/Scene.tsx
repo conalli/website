@@ -1,15 +1,15 @@
 /* eslint-disable react/no-unknown-property */
+import { useStore } from "@nanostores/react";
 import { OrbitControls, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { PropsWithChildren, Suspense } from "react";
-import { DEG2RAD } from "three/src/math/MathUtils";
 import { EffectComposer, Vignette } from "@react-three/postprocessing";
+import { AnimatePresence, motion } from "framer-motion";
+import { PropsWithChildren, Suspense } from "react";
 import { useMousePosition, useWindowDimensions } from "src/hooks";
+import { loadingAtom } from "src/store/loading";
+import { DEG2RAD } from "three/src/math/MathUtils";
 import Loader from "./Loader";
 import { PC, Plant } from "./models";
-import { loadingAtom } from "src/store/loading";
-import { useStore } from "@nanostores/react";
-import { AnimatePresence, motion } from "framer-motion";
 
 function Scene({ children }: PropsWithChildren) {
   const loading = useStore(loadingAtom);

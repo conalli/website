@@ -15,8 +15,8 @@ license: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 source: https://sketchfab.com/3d-models/low-poly-plant-in-a-pot-e3a4d0c168954ced9e3702c14b986046
 title: Low Poly Plant in a pot
 */
-import type * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
+import type * as THREE from "three";
 import type { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {

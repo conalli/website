@@ -1,5 +1,5 @@
 import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { AnimatePresence, motion, Variants } from "framer-motion";
+import { AnimatePresence, Variants, motion } from "framer-motion";
 
 const hamburgerControls: Variants = {
   init: { opacity: 0, x: 10 },

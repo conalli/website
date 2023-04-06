@@ -1,7 +1,7 @@
 import { ProjectData, projects } from "@utils/projectData";
-import ProjectCard from "./ProjectCard";
-import { useRef, useState } from "react";
 import { combineStyles } from "@utils/styles";
+import { useRef, useState } from "react";
+import ProjectCard from "./ProjectCard";
 
 function ProjectList() {
   const [selected, setSelected] = useState<ProjectData>(projects[3]);
