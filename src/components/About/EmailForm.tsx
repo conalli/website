@@ -1,15 +1,11 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  CheckCircledIcon,
-  CrossCircledIcon,
-  MinusCircledIcon,
-  PaperPlaneIcon,
-} from "@radix-ui/react-icons";
+import { PaperPlaneIcon } from "@radix-ui/react-icons";
 import { combineStyles } from "@utils/styles";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { EmailData, emailSchema, useEmail } from "src/hooks";
 import ErrorMessages from "./ErrorMessages";
+import LoadingIndicator from "./LoadingIndicator";
 
 function EmailForm() {
   const {
@@ -59,7 +55,7 @@ function EmailForm() {
             className="rounded-sm text-black w-3/5 grow px-1 shadow-lg"
           />
         </label>
-        <label className="text-lg py-2 flex gap-6">
+        <label className="text-lg py-2 flex gap-8">
           subject:
           <input
             type="text"
@@ -88,21 +84,13 @@ function EmailForm() {
             whileHover={{ scale: isValid ? 1.1 : 1 }}
             whileTap={{ scale: isValid ? 0.9 : 1 }}
           >
-            Send <PaperPlaneIcon className="" height={15} width={15} />
+            Send <PaperPlaneIcon className="" height={20} width={20} />
           </motion.button>
-          {isError && (
-            <CrossCircledIcon className="bg-red-500" height={15} width={15} />
-          )}
-          {isSuccess && (
-            <CheckCircledIcon className="bg-green-500" height={15} width={15} />
-          )}
-          {isLoading && (
-            <MinusCircledIcon
-              className="bg-yellow-500"
-              height={15}
-              width={15}
-            />
-          )}
+          <LoadingIndicator
+            isError={isError}
+            isLoading={isLoading}
+            isSuccess={isSuccess}
+          />
         </div>
       </form>
     </div>
