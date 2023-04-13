@@ -8,7 +8,7 @@ repositories:
       url: https://github.com/conalli/bookshelf-web
     - name: backend
       url: https://github.com/conalli/bookshelf-backend
-video: https://www.youtube.com/embed/-XbyZeM_o1Y
+video: https://www.youtube.com/embed/oM3EIXl4G5g
 stack: [Typescript, Next.js, Tailwind CSS, Go, Mongo DB, Redis, Docker]
 ---
 
