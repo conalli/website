@@ -30,7 +30,7 @@ function CLI() {
   }
   return (
     <div className="bg-black w-full h-full font-mono text-green-500">
-      <div className="h-3/5 p-[0.1rem]" onBlur={(e) => console.log(e)}>
+      <div className="h-3/5 p-[0.1rem]">
         <pre className="text-[0.15rem] ">{welcome}</pre>
         <p className="text-[0.2rem] py-[0.1rem]">
           I&rsquo;m Conall, a software engineer based in Tokyo.

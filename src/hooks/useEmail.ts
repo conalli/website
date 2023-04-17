@@ -33,7 +33,6 @@ export const useEmail = () => {
   }, [isSuccess, isError]);
 
   const send = async (data: EmailData) => {
-    console.log(data);
     setIsLoading(true);
     const success = await sendEmail(data);
     setIsLoading(false);

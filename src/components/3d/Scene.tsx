@@ -13,7 +13,6 @@ import { PC, Plant } from "./models";
 
 function Scene({ children }: PropsWithChildren) {
   const loading = useStore(loadingAtom);
-  console.log(loading);
   const { x, y } = useMousePosition();
   const { width, height } = useWindowDimensions();
   const r = x / width;
