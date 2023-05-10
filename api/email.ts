@@ -2,10 +2,6 @@ import sgMail from "@sendgrid/mail";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { EmailData } from "src/hooks";
 
-export const config = {
-  runtime: "nodejs",
-};
-
 type SendGridMessage = {
   to: string;
   from: string;
