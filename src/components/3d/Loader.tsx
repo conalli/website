@@ -23,7 +23,7 @@ function Loader() {
     const timeout = setInterval(() => {
       setShowMessage(false);
       if (progress === 100 && !showMessage) loadingComplete();
-    }, 2000);
+    }, 1500);
 
     return () => {
       clearInterval(timeout);

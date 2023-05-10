@@ -20,7 +20,11 @@ function Scene({ children }: PropsWithChildren) {
   const b = 1 - (r + g);
   if (!children) return null;
   return (
-    <div className="flex absolute top-0 z-0 w-[100vw] h-[100vh] p-0 m-auto">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="flex absolute top-0 z-0 w-[100vw] h-[100vh] p-0 m-auto"
+    >
       <AnimatePresence>
         <Canvas shadows key="3d-canvas">
           <color attach="background" args={[r, g, b]} />
@@ -37,7 +41,7 @@ function Scene({ children }: PropsWithChildren) {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }
 
