@@ -33,7 +33,7 @@
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.0.0",
     "react-hook-form": "^7.43.9",
-    "sass": "^1.60.0",
+    "sass": "^1.62.1",
     "tailwindcss": "^3.0.24",
     "three": "^0.151.3"
   },
