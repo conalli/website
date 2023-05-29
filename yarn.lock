@@ -92,19 +92,20 @@
     undici "^5.22.0"
     which-pm-runs "^1.1.0"
 
-"@astrojs/vercel@^3.2.2":
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/@astrojs/vercel/-/vercel-3.2.2.tgz#2430ebd80f08652a39f8a19c89325927a35d8fd0"
-  integrity sha512-w8vfIrJnVvHNoZRTMH5CqeOUN/8xR2wWYh8vyv4HEj8vJyZKehfDT7W1edAgnbK4n0OOuWX+uGPZRGLeEsz7Lg==
+"@astrojs/vercel@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@astrojs/vercel/-/vercel-3.4.0.tgz#d2cb45dc25f93b79678f543185b1b5d69219a170"
+  integrity sha512-pTD7PUos5uoUFZZXooiNN2vcALLQtGF1urtaFCEMWJVbmpYUC8YlA8RsISbF2ICEpTgDWMHttRJE10aCBHrmKA==
   dependencies:
-    "@astrojs/webapi" "^2.1.0"
+    "@astrojs/webapi" "^2.1.1"
     "@vercel/analytics" "^0.1.8"
     "@vercel/nft" "^0.22.1"
+    esbuild "^0.17.12"
     fast-glob "^3.2.11"
     set-cookie-parser "^2.5.1"
     web-vitals "^3.1.1"
 
-"@astrojs/webapi@^2.1.0", "@astrojs/webapi@^2.1.1":
+"@astrojs/webapi@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@astrojs/webapi/-/webapi-2.1.1.tgz#965bcc35a72ca40e60e1ed4c2e4350f215bee179"
   integrity sha512-mHZ7VgPNMeV3TYIw3SGHTKaJosBxA8bTzZ3QhNw509qvCJca4Lkjes8JywimuwTn+TMjEiv7ksNfwRluad3jqA==
@@ -2560,7 +2561,7 @@ esbuild@0.14.47:
     esbuild-windows-64 "0.14.47"
     esbuild-windows-arm64 "0.14.47"
 
-esbuild@^0.17.18, esbuild@^0.17.5:
+esbuild@^0.17.12, esbuild@^0.17.18, esbuild@^0.17.5:
   version "0.17.19"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.17.19.tgz#087a727e98299f0462a3d0bcdd9cd7ff100bd955"
   integrity sha512-XQ0jAPFkK/u3LcVRcvVHQcTIqD6E2H1fvZMA5dQPSOWb3suUbWbfbRf94pjc0bNzRYLfIrDRQXr7X+LHIm5oHw==
