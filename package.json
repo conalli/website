@@ -22,7 +22,7 @@
     "@radix-ui/react-popover": "^1.0.5",
     "@react-three/drei": "^9.68.6",
     "@react-three/fiber": "^8.13.0",
-    "@react-three/postprocessing": "^2.7.1",
+    "@react-three/postprocessing": "^2.14.10",
     "@sendgrid/mail": "^7.7.0",
     "astro": "^2.5.7",
     "framer-motion": "^10.12.9",
