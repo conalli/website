@@ -1,13 +1,15 @@
 /* eslint-disable react/no-unknown-property */
 import { useStore } from "@nanostores/react";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { EffectComposer, Vignette } from "@react-three/postprocessing";
 import { AnimatePresence, motion } from "framer-motion";
 import { PropsWithChildren, Suspense } from "react";
 import { useMousePosition, useWindowDimensions } from "src/hooks";
 import { loadingAtom } from "src/store/loading";
 import { DEG2RAD } from "three/src/math/MathUtils";
 import Loader from "./Loader";
+import { PC, Plant } from "./models";
 
 function Scene({ children }: PropsWithChildren) {
   const loading = useStore(loadingAtom);
@@ -48,7 +50,7 @@ const HomeScene = () => {
     <Scene>
       <ambientLight intensity={0.5} />
       <directionalLight color="red" position={[0, 10, 0]} intensity={0.5} />
-      {/* <Stage
+      <Stage
         intensity={0.1}
         preset="rembrandt"
         shadows={{
@@ -65,7 +67,7 @@ const HomeScene = () => {
         <EffectComposer>
           <Vignette eskil={false} offset={0.1} darkness={0.8} />
         </EffectComposer>
-      </Stage> */}
+      </Stage>
       <OrbitControls
         minPolarAngle={Math.PI / 4}
         maxPolarAngle={Math.PI / 2}
