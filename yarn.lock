@@ -15,10 +15,15 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@astrojs/compiler@^1.0.0", "@astrojs/compiler@^1.0.1", "@astrojs/compiler@^1.4.1", "@astrojs/compiler@^1.5.3", "@astrojs/compiler@^1.5.5":
+"@astrojs/compiler@^1.0.0", "@astrojs/compiler@^1.0.1", "@astrojs/compiler@^1.4.1", "@astrojs/compiler@^1.5.5":
   version "1.5.7"
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-1.5.7.tgz#8c377f30bc4542631d4adc11f48896d78f79a8ac"
   integrity sha512-dFU7GAMbpTUGPkRoCoMQrGFlTe3qIiQMSOxIXp/nB1Do4My9uogjEmBHdR5Cwr4i6rc5/1R3Od9v8kU/pkHXGQ==
+
+"@astrojs/compiler@^1.6.0":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-1.6.1.tgz#c6c3cb6b87efbd62038012dce5b226f7ebc7d7fe"
+  integrity sha512-QZZhV2kOhvyXEfpaGLgHWNPUOlkMVx3Zw+5IlXXU2p448NwtyYt3C6MuS7baVsTlluH3EedAoDBmelt9hPhfiQ==
 
 "@astrojs/internal-helpers@^0.1.1":
   version "0.1.1"
@@ -102,20 +107,21 @@
     undici "^5.22.0"
     which-pm-runs "^1.1.0"
 
-"@astrojs/vercel@^3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/vercel/-/vercel-3.4.0.tgz#d2cb45dc25f93b79678f543185b1b5d69219a170"
-  integrity sha512-pTD7PUos5uoUFZZXooiNN2vcALLQtGF1urtaFCEMWJVbmpYUC8YlA8RsISbF2ICEpTgDWMHttRJE10aCBHrmKA==
+"@astrojs/vercel@^3.7.4":
+  version "3.7.4"
+  resolved "https://registry.yarnpkg.com/@astrojs/vercel/-/vercel-3.7.4.tgz#58b2840a607e05af91cbdc6d67c78a5f45b3f639"
+  integrity sha512-pJHCfLj6T4zlITWwv02U2hIyLIdkw7AmMmiQPAGwUYM2Y8qKwo/AvEIG4ceIVDcitHX7mXq3uigTpvC+0iEDwA==
   dependencies:
-    "@astrojs/webapi" "^2.1.1"
-    "@vercel/analytics" "^0.1.8"
-    "@vercel/nft" "^0.22.1"
-    esbuild "^0.17.12"
-    fast-glob "^3.2.11"
-    set-cookie-parser "^2.5.1"
-    web-vitals "^3.1.1"
+    "@astrojs/internal-helpers" "^0.1.1"
+    "@astrojs/webapi" "^2.2.0"
+    "@vercel/analytics" "^0.1.11"
+    "@vercel/nft" "^0.22.6"
+    esbuild "^0.17.19"
+    fast-glob "^3.2.12"
+    set-cookie-parser "^2.6.0"
+    web-vitals "^3.3.2"
 
-"@astrojs/webapi@^2.1.1", "@astrojs/webapi@^2.2.0":
+"@astrojs/webapi@^2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@astrojs/webapi/-/webapi-2.2.0.tgz#fd142a468d5d690bc5ab884b532ef4db44f090b2"
   integrity sha512-mHAOApWyjqSe5AQMOUD9rsZJqbMQqe3Wosb1a40JV6Okvyxj1G6GTlthwYadWCymq/lbgwh0PLiY8Fr4eFxtuQ==
@@ -1158,6 +1164,11 @@
   dependencies:
     "@types/ms" "*"
 
+"@types/dom-view-transitions@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@types/dom-view-transitions/-/dom-view-transitions-1.0.1.tgz#55333c2862c349153b9007ca01011d9379c12c6c"
+  integrity sha512-A9S1ijj/4MX06I1W/6on8lhaYyq1Ir7gaOvfllW1o4RzVWW88HAeqX0pUx9VgOLnNpdiGeUW2CTkg18p5LWIrA==
+
 "@types/draco3d@^1.4.0":
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/@types/draco3d/-/draco3d-1.4.2.tgz#7faccb809db2a5e19b9efb97c5f2eb9d64d527ea"
@@ -1400,7 +1411,7 @@
   dependencies:
     "@use-gesture/core" "10.2.25"
 
-"@vercel/analytics@^0.1.8":
+"@vercel/analytics@^0.1.11":
   version "0.1.11"
   resolved "https://registry.yarnpkg.com/@vercel/analytics/-/analytics-0.1.11.tgz#727a0ac655a4a89104cdea3e6925476470299428"
   integrity sha512-mj5CPR02y0BRs1tN3oZcBNAX9a8NxsIUl9vElDPcqxnMfP0RbRc9fI9Ud7+QDg/1Izvt5uMumsr+6YsmVHcyuw==
@@ -1415,7 +1426,7 @@
   resolved "https://registry.yarnpkg.com/@vercel/error-utils/-/error-utils-1.0.10.tgz#6530e9c930d5cf4c7f96045ec3a0bccaf2e6b14c"
   integrity sha512-nsKy2sy+pjUWyKI1V/XXKspVzHMYgSalmj5+EsKWFXZbnNZicqxNtMR94J8Hs7SB4TQxh0s4KhczJtL59AVGMg==
 
-"@vercel/nft@^0.22.1":
+"@vercel/nft@^0.22.6":
   version "0.22.6"
   resolved "https://registry.yarnpkg.com/@vercel/nft/-/nft-0.22.6.tgz#edb30d300bb809c0945ea4c7b87e56f634885541"
   integrity sha512-gTsFnnT4mGxodr4AUlW3/urY+8JKKB452LwF3m477RFUJTAaDmcz2JqFuInzvdybYIeyIv1sSONEJxsxnbQ5JQ==
@@ -1704,12 +1715,12 @@ astro-eslint-parser@^0.14.0:
     espree "^9.0.0"
     semver "^7.3.8"
 
-astro@^2.7.3:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-2.7.3.tgz#732f3c6238807bc247b9f0acc450ee59f13dd629"
-  integrity sha512-DwPvvOYElhCNyAWUlFd17HhTNBx+XXnAZfM/PYHq7RicvC/tG4loBjlYk/Yw7x9wQCkbKjoxVRiNYvmvSUmisw==
+astro@^2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-2.9.1.tgz#82a027463d6dba150589e465553b6342a1cc9bd9"
+  integrity sha512-cY+ilz7zbKx21QA4LRJtE49NakkhUVh6kU9LqNMThz/Fqv1Rkz0uJBWIUJfJqpOmqnpFEW2G245gF4+bUA7aRQ==
   dependencies:
-    "@astrojs/compiler" "^1.5.3"
+    "@astrojs/compiler" "^1.6.0"
     "@astrojs/internal-helpers" "^0.1.1"
     "@astrojs/language-server" "^1.0.0"
     "@astrojs/markdown-remark" "^2.2.1"
@@ -1722,6 +1733,7 @@ astro@^2.7.3:
     "@babel/traverse" "^7.22.5"
     "@babel/types" "^7.22.5"
     "@types/babel__core" "^7.20.1"
+    "@types/dom-view-transitions" "^1.0.1"
     "@types/yargs-parser" "^21.0.0"
     acorn "^8.9.0"
     boxen "^6.2.1"
@@ -1745,6 +1757,7 @@ astro@^2.7.3:
     kleur "^4.1.4"
     magic-string "^0.27.0"
     mime "^3.0.0"
+    network-information-types "^0.1.1"
     ora "^6.3.1"
     p-limit "^4.0.0"
     path-to-regexp "^6.2.1"
@@ -1762,6 +1775,7 @@ astro@^2.7.3:
     vfile "^5.3.7"
     vite "^4.3.9"
     vitefu "^0.2.4"
+    which-pm "^2.0.0"
     yargs-parser "^21.1.1"
     zod "^3.20.6"
 
@@ -2608,7 +2622,7 @@ esbuild@0.14.47:
     esbuild-windows-64 "0.14.47"
     esbuild-windows-arm64 "0.14.47"
 
-esbuild@^0.17.12, esbuild@^0.17.19, esbuild@^0.17.5:
+esbuild@^0.17.19, esbuild@^0.17.5:
   version "0.17.19"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.17.19.tgz#087a727e98299f0462a3d0bcdd9cd7ff100bd955"
   integrity sha512-XQ0jAPFkK/u3LcVRcvVHQcTIqD6E2H1fvZMA5dQPSOWb3suUbWbfbRf94pjc0bNzRYLfIrDRQXr7X+LHIm5oHw==
@@ -2870,7 +2884,7 @@ fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
   integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
 
-fast-glob@^3.2.11, fast-glob@^3.2.12, fast-glob@^3.2.7, fast-glob@^3.2.9:
+fast-glob@^3.2.12, fast-glob@^3.2.7, fast-glob@^3.2.9:
   version "3.2.12"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.12.tgz#7f39ec99c2e6ab030337142da9e0c18f37afae80"
   integrity sha512-DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==
@@ -4435,6 +4449,11 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
+network-information-types@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/network-information-types/-/network-information-types-0.1.1.tgz#07e98d8050dd1e8ac787f0cc5ebaae4935393861"
+  integrity sha512-mLXNafJYOkiJB6IlF727YWssTRpXitR+tKSLyA5VAdBi3SOvLf5gtizHgxf241YHPWocnAO/fAhVrB/68tPHDw==
+
 nlcst-to-string@^3.0.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/nlcst-to-string/-/nlcst-to-string-3.1.1.tgz#83b90f2e1ee2081e14701317efc26d3bbadc806e"
@@ -5345,7 +5364,7 @@ set-blocking@^2.0.0:
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
   integrity sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==
 
-set-cookie-parser@^2.5.1:
+set-cookie-parser@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/set-cookie-parser/-/set-cookie-parser-2.6.0.tgz#131921e50f62ff1a66a461d7d62d7b21d5d15a51"
   integrity sha512-RVnVQxTXuerk653XfuliOxBP81Sf0+qfQE73LIYKcyMYHG94AuH0kgrQpRDuTZnSmjpysHmzxJXKNfa6PjFhyQ==
@@ -6166,10 +6185,10 @@ web-namespaces@^2.0.0:
   resolved "https://registry.yarnpkg.com/web-namespaces/-/web-namespaces-2.0.1.tgz#1010ff7c650eccb2592cebeeaf9a1b253fd40692"
   integrity sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==
 
-web-vitals@^3.1.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-3.3.1.tgz#f80e4fd01784476c023c8b2c4219075bbe96f64d"
-  integrity sha512-LTfY5GjcY3ngFzNsYFSYL+AmVmlWrzPTUxSMDis2rZbf+SzT7HH3NH4Y/l45XOlrAIunOBeURN9qtBHkRskAiA==
+web-vitals@^3.3.2:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-3.4.0.tgz#45ed33a3a2e029dc38d36547eb5d71d1c7e2552d"
+  integrity sha512-n9fZ5/bG1oeDkyxLWyep0eahrNcPDF6bFqoyispt7xkW0xhDzpUBTgyDKqWDi1twT0MgH4HvvqzpUyh0ZxZV4A==
 
 webgl-constants@^1.1.1:
   version "1.1.1"
@@ -6220,7 +6239,7 @@ which-pm-runs@^1.1.0:
   resolved "https://registry.yarnpkg.com/which-pm-runs/-/which-pm-runs-1.1.0.tgz#35ccf7b1a0fce87bd8b92a478c9d045785d3bf35"
   integrity sha512-n1brCuqClxfFfq/Rb0ICg9giSZqCS+pLtccdag6C2HyufBrh3fBOiy9nb6ggRMvWOVH5GrdJskj5iGTZNxd7SA==
 
-which-pm@2.0.0:
+which-pm@2.0.0, which-pm@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/which-pm/-/which-pm-2.0.0.tgz#8245609ecfe64bf751d0eef2f376d83bf1ddb7ae"
   integrity sha512-Lhs9Pmyph0p5n5Z3mVnN0yWcbQYUAD7rbQUiMsQxOJ3T57k7RFe35SUwWMf7dsbDZks1uOmw4AecB/JMDj3v/w==
