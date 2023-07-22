@@ -7,6 +7,8 @@ publishDate: 2023-04-05
 image: 
     src: ./_hello_world_c.png
     alt: hello world program in C code
+tags:
+    - Go
 ---
 
 ### Yes, I know
