@@ -1,5 +1,5 @@
 ---
-# draft(false), title, description, publishDate, image?, tags? 
+# draft(true), title, description, publishDate, image?, tags? 
 draft: false
 title: Hello, World
 description: Welcome to my blog.
@@ -25,7 +25,7 @@ As for the future, I will be diving into the deep and slightly overhyped world o
 
 ### Let's Go
 
-The picture above shows the classic hello world in C, but I'm more of a Gopher myself, so in this first post I thought I would explain how to get up and running with a "Hello World" program in Go.
+The picture above shows the classic hello world in C, but I'm more of a Gopher myself, so in this first post I thought I would explain how to get up and running with a "Hello, World" program in Go.
 
 With go downloaded, change directory into where you want to work and run the following commands.
 
@@ -55,7 +55,7 @@ func main() {
 
 The first statement in a Go file must be a package name. Packages names are generally concise, and the package name _main_ is special as it from _package main_ that we build executables.
 
-Next we have an import, the _fmt_ package (pronounced 'fumpt'). This is a really useful package in the standard library that helps with formatting.
+Next we have an import, the _fmt_ package (pronounced 'fumpt' ...apparently). This is a really useful package in the standard library that helps with formatting.
 
 Finally we have our _main_ function. This function will be called automatically when we start our program. Inside _main_ we call the Println function from the _fmt_ package. As you might expect, this prints our argument, in this case "Hello, World!" to standard out.
 

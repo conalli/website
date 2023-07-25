@@ -35,10 +35,10 @@ export const projects: ProjectData[] = [
     title: "Expenses",
     description: "Track expenses quickly and easily while on the go.",
     href: "/projects/expenses",
+    logoSrc: "/projects/expenses-logo.png",
     styles: {
       container:
-        /*tw*/ "bg-yellow-500 col-start-2 row-start-[6] xs:max-md:col-start-4 xs:max-md:row-start-[7] lg:col-start-5 lg:row-start-6",
-      title: /*tw*/ "text-black font-bold",
+        /*tw*/ "bg-white text-black col-start-2 row-start-[6] xs:max-md:col-start-4 xs:max-md:row-start-[7] lg:col-start-5 lg:row-start-6",
     },
   },
   {

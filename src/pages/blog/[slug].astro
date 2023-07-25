@@ -37,11 +37,11 @@ const { Content } = await post.render();
       <header>
         <PageTitle
           text={post.data.title}
-          textClass={/*tw*/ "text-4xl sm:text-6xl font-serif font-bold"}
+          textClass={/*tw*/ "text-4xl sm:text-6xl font-serif font-bold py-2"}
           periodClass={/*tw*/ "text-yellow-500"}
         />
-        <p class="text-xl text-zinc-400">{post.data.description}</p>
-        <p class="text-md text-yellow-500">
+        <p class="text-xl text-zinc-400 py-1">{post.data.description}</p>
+        <p class="text-md text-yellow-500 py-1">
           {post.data.publishDate.toLocaleDateString("ja-JP")}
         </p>
         {
@@ -100,6 +100,11 @@ const { Content } = await post.render();
       code > span {
         padding: 0 1rem;
       }
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 1rem;
     }
   }
 </style>
