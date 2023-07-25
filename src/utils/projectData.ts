@@ -38,7 +38,7 @@ export const projects: ProjectData[] = [
     logoSrc: "/projects/expenses-logo.png",
     styles: {
       container:
-        /*tw*/ "bg-white col-start-2 row-start-[6] xs:max-md:col-start-4 xs:max-md:row-start-[7] lg:col-start-5 lg:row-start-6",
+        /*tw*/ "bg-white text-black col-start-2 row-start-[6] xs:max-md:col-start-4 xs:max-md:row-start-[7] lg:col-start-5 lg:row-start-6",
     },
   },
   {

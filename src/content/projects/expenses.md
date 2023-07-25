@@ -2,19 +2,18 @@
 # draft(false), title, description, url?, repository, logo?, video?, image: src, alt?, stack,
 title: Expenses
 description: Expense app for quickly tracking living costs.
+url: https://expenses.conalli.info
 repositories:
     - name: app
       url: https://github.com/conalli/expenses
-stack: [Python, Django Rest Framework, Celery, Redis, SQLite, NGINX, Docker]
+stack: [TypeScript, Next.js, Tailwind CSS, Python, Django Rest Framework, Pytest, Celery, Redis, PostgreSQL, NGINX, Docker, Tesseract OCR, SendGrid]
 ---
 
 ## Expenses is currently under development
 
-Expenses is an in development expense management API written in Python, using Django, Django Rest Framework, Pytest and Celery.
+Expenses is an expense management app written in Python, using Django, Django Rest Framework, Pytest and Celery on the backend and TypeScript, Next.js and Tailwind CSS on the frontend.
 
-Track expenses individually or in a group.
-Recieve monthly expense report emails.
-I am currently trying to find the best options for deployment, so it is currently only able to run locally.
+Expenses provides a dashboard for users to track their expenses individually or in a group and produces monthly expense reports sent by email. Alongside forms for inputting expense data, it also uses Tesseract OCR to allow users to extract expense amounts from receipts.
 
 ## Future Features
 
@@ -24,6 +23,4 @@ I am currently trying to find the best options for deployment, so it is currentl
 
 - [ ] Add styling to emails.
 
-- [ ] Frontend Mobile app (React Native)
-
-- [ ] Receipt text recognition.
+- [ ] More advanced receipt text recognition.

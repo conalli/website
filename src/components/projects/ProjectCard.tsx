@@ -24,12 +24,11 @@ function ProjectCard({
       animate={{ scale: 1, x: 0, transition: { delay: (index + 1) * 0.1 } }}
       className={combineStyles(
         z,
-        "w-[200px] h-[125px] tall:h-[150px] xs:w-[400px] xs:max-md:h-[200px] md:h-[200px] flex justify-center items-center rounded shadow-lg hover:cursor-pointer",
+        "w-[200px] h-[125px] tall:h-[150px] xs:w-[400px] xs:max-md:h-[200px] md:h-[200px] flex flex-col justify-center items-center rounded shadow-lg hover:cursor-pointer",
         project.styles.container
       )}
       onClick={() => {
         selectProject(project);
-        setShowDescription((prev) => !prev);
       }}
       drag
       dragConstraints={listRef}
@@ -44,6 +43,17 @@ function ProjectCard({
           <CardLogo project={project} />
         )}
       </AnimatePresence>
+      <div>
+        <button
+          className={combineStyles(
+            z,
+            "underline opacity-50 hover:opacity-100 py-2"
+          )}
+          onClick={() => setShowDescription((prev) => !prev)}
+        >
+          {showDescription ? "<" : "more >"}
+        </button>
+      </div>
     </motion.div>
   );
 }
