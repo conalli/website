@@ -6,6 +6,7 @@ url: https://expenses.conalli.info
 repositories:
     - name: app
       url: https://github.com/conalli/expenses
+video: https://www.youtube.com/embed/0f90ipAKlfo
 stack: [TypeScript, Next.js, Tailwind CSS, Python, Django Rest Framework, Pytest, Celery, Redis, PostgreSQL, NGINX, Docker, Tesseract OCR, SendGrid]
 ---
 
