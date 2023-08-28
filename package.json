@@ -43,7 +43,7 @@
     "@types/three": "^0.149.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "@vercel/node": "^2.15.6",
+    "@vercel/node": "^3.0.3",
     "eslint": "^8.46.0",
     "eslint-plugin-astro": "^0.28.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
