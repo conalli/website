@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/react": "^2.2.1",
     "@astrojs/tailwind": "^4.0.0",
-    "@astrojs/vercel": "^3.7.4",
+    "@astrojs/vercel": "^3.8.1",
     "@astropub/icons": "^0.2.0",
     "@hookform/resolvers": "^3.1.1",
     "@nanostores/react": "^0.4.1",
