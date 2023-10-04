@@ -4,7 +4,7 @@ import { OrbitControls, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { EffectComposer, Vignette } from "@react-three/postprocessing";
 import { AnimatePresence, motion } from "framer-motion";
-import { PropsWithChildren, Suspense } from "react";
+import { Suspense, type PropsWithChildren } from "react";
 import { useMousePosition, useWindowDimensions } from "src/hooks";
 import { loadingAtom } from "src/store/loading";
 import { DEG2RAD } from "three/src/math/MathUtils";

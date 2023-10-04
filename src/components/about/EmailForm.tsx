@@ -1,9 +1,9 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { emailSchema, useEmail, type EmailData } from "@hooks";
 import { PaperPlaneIcon } from "@radix-ui/react-icons";
 import { combineStyles } from "@utils/styles";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import { EmailData, emailSchema, useEmail } from "src/hooks";
 import ErrorMessages from "./ErrorMessages";
 import LoadingIndicator from "./LoadingIndicator";
 

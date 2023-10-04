@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@astrojs/react": "^3.0.2",
-    "@astrojs/tailwind": "^4.0.0",
-    "@astrojs/vercel": "^3.8.1",
+    "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/vercel": "^5.0.1",
     "@astropub/icons": "^0.2.0",
     "@hookform/resolvers": "^3.3.1",
     "@nanostores/react": "^0.4.1",
@@ -24,7 +24,7 @@
     "@react-three/fiber": "^8.14.4",
     "@react-three/postprocessing": "^2.15.1",
     "@sendgrid/mail": "^7.7.0",
-    "astro": "^2.10.7",
+    "astro": "^3.2.2",
     "framer-motion": "^10.15.2",
     "nanoid": "^5.0.1",
     "nanostores": "^0.7.4",
@@ -38,6 +38,7 @@
     "three": "^0.153.0"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.2.0",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.8",
     "@types/three": "^0.149.0",

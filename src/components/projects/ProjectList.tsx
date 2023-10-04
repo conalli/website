@@ -1,4 +1,4 @@
-import { ProjectData, projects } from "@utils/projectData";
+import { projects, type ProjectData } from "@utils/projectData";
 import { combineStyles } from "@utils/styles";
 import { useRef, useState } from "react";
 import ProjectCard from "./ProjectCard";

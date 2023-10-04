@@ -1,5 +1,5 @@
+import { useWindowDimensions } from "@hooks";
 import { CustomView, isMobileOnly } from "react-device-detect";
-import { useWindowDimensions } from "../../hooks";
 import MobileNav from "./MobileNav";
 import PageLinks from "./PageLinks";
 
