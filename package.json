@@ -26,7 +26,7 @@
     "@sendgrid/mail": "^7.7.0",
     "astro": "^3.3.3",
     "framer-motion": "^10.15.2",
-    "nanoid": "^5.0.2",
+    "nanoid": "^5.0.4",
     "nanostores": "^0.7.4",
     "postcss": "^8.4.31",
     "react": "^18.0.0",
