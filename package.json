@@ -23,7 +23,7 @@
     "@react-three/drei": "^9.83.9",
     "@react-three/fiber": "^8.15.14",
     "@react-three/postprocessing": "^2.15.6",
-    "@sendgrid/mail": "^7.7.0",
+    "@sendgrid/mail": "^8.1.0",
     "astro": "^3.3.3",
     "framer-motion": "^10.15.2",
     "nanoid": "^5.0.2",
