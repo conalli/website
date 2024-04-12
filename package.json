@@ -12,7 +12,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@astrojs/react": "^3.0.3",
+    "@astrojs/react": "^3.1.1",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^5.0.2",
     "@astropub/icons": "^0.2.0",
@@ -28,7 +28,7 @@
     "framer-motion": "^11.0.3",
     "nanoid": "^5.0.4",
     "nanostores": "^0.7.4",
-    "postcss": "^8.4.31",
+    "postcss": "^8.4.38",
     "react": "^18.0.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.0.0",
@@ -44,12 +44,12 @@
     "@types/three": "^0.149.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "@vercel/node": "^3.0.3",
+    "@vercel/node": "^3.0.26",
     "eslint": "^8.57.0",
     "eslint-plugin-astro": "^0.29.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.33.2",
-    "prettier": "^3.0.3",
+    "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.12.0",
     "typescript": "^5.3.3"
   }
