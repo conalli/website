@@ -38,7 +38,7 @@
     "three": "^0.153.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.2.0",
+    "@astrojs/check": "^0.5.10",
     "@types/react": "^18.2.78",
     "@types/react-dom": "^18.2.11",
     "@types/three": "^0.149.0",
