@@ -12,7 +12,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@astrojs/react": "^3.3.1",
+    "@astrojs/react": "^3.6.2",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^5.2.0",
     "@astropub/icons": "^0.2.0",
