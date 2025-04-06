@@ -1,12 +1,11 @@
 ---
+return Astro.redirect("/under-construction");
 import Layout from "@layouts/Layout.astro";
 import { Image } from "astro:assets";
 import PageTitle from "@components/ui/PageTitle.astro";
 import EmailForm from "@components/about/EmailForm";
 
 export const prerender = true;
-
-return Astro.redirect("/under-construction");
 ---
 
 <Layout title="about">

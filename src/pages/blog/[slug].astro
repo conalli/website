@@ -1,4 +1,5 @@
 ---
+return Astro.redirect("/under-construction");
 import { type CollectionEntry, getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
@@ -26,8 +27,6 @@ export interface Props {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
-
-return Astro.redirect("/under-construction");
 ---
 
 <Layout title={post.data.title}>

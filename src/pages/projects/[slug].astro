@@ -1,4 +1,5 @@
 ---
+return Astro.redirect("/under-construction");
 import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import PageTitle from "@components/ui/PageTitle.astro";
@@ -25,8 +26,6 @@ export interface Props {
 
 const { project } = Astro.props;
 const { Content } = await project.render();
-
-return Astro.redirect("/under-construction");
 ---
 
 <Layout title={project.data.title}>
