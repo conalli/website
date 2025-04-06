@@ -26,6 +26,8 @@ export interface Props {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+return Astro.redirect("/under-construction");
 ---
 
 <Layout title={post.data.title}>
