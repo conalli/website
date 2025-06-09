@@ -1,5 +1,4 @@
 ---
-import Nav from "./NavBar";
 const url = Astro.url.pathname;
 const bg = url === "/" ? "bg-transparent" : "bg-bgDark";
 ---
@@ -10,10 +9,9 @@ const bg = url === "/" ? "bg-transparent" : "bg-bgDark";
 >
   <a id="Ci-icon" href="/" class="rounded-full under"
     ><span class="text-3xl font-serif font-bold"
-      >C<span class="text-gray-400 mx-[0.25rem]">.</span>i</span
+      >C<span class="text-gray-400 mx-1">.</span>i</span
     >
   </a>
-  <Nav client:load currentUrl={url} />
 </header>
 <script>
   const options = [

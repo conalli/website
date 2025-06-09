@@ -1,6 +1,5 @@
 import sgMail from "@sendgrid/mail";
 import type { APIRoute } from "astro";
-import type { EmailData } from "src/hooks";
 
 type SendGridMessage = {
   to: string;
@@ -13,7 +12,7 @@ type SendGridMessage = {
 sgMail.setApiKey(import.meta.env.SENDGRID_APIKEY);
 
 export const POST: APIRoute = async ({ request }) => {
-  const { email, name, subject, message } = (await request.json()) as EmailData;
+  const { email, name, subject, message } = await request.json();
   const msg: SendGridMessage = {
     to: "contact@conalli.info",
     from: "contact@conalli.info",

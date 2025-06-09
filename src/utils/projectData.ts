@@ -28,7 +28,7 @@ export const projects: ProjectData[] = [
     logoSrc: "/projects/myniwa-logo.png",
     styles: {
       container:
-        /*tw*/ "bg-green-500 col-start-4 row-start-3 xs:max-md:col-start-6 xs:row-start-4 lg:col-start-[8]",
+        /*tw*/ "bg-green-500 col-start-4 row-start-3 xs:max-md:col-start-6 xs:row-start-4 lg:col-start-8",
     },
   },
   {
@@ -38,7 +38,7 @@ export const projects: ProjectData[] = [
     logoSrc: "/projects/expenses-logo.png",
     styles: {
       container:
-        /*tw*/ "bg-white text-black col-start-2 row-start-[6] xs:max-md:col-start-4 xs:max-md:row-start-[7] lg:col-start-5 lg:row-start-6",
+        /*tw*/ "bg-white text-black col-start-2 row-start-6 xs:max-md:col-start-4 xs:max-md:row-start-[7] lg:col-start-5 lg:row-start-6",
     },
   },
   {
@@ -47,7 +47,7 @@ export const projects: ProjectData[] = [
     href: "/projects/portfolio",
     styles: {
       container:
-        /*tw*/ "col-start-5 row-start-[9] bg-red-500 xs:max-md:col-start-7 xs:max-md:row-start-[10] lg:col-start-[9] lg:row-start-[9]",
+        /*tw*/ "col-start-5 row-start-9 bg-red-500 xs:max-md:col-start-7 xs:max-md:row-start-[10] lg:col-start-9 lg:row-start-9",
       title: /*tw*/ "text-white font-serif",
     },
   },

@@ -3,16 +3,13 @@ return Astro.redirect("/under-construction");
 import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import PageTitle from "@components/ui/PageTitle.astro";
-import { toSlug } from "@utils/page";
 
 export const prerender = true;
 export const getStaticPaths = async () => {
   const projects = await getCollection("projects");
   return projects.map((project) => {
     return {
-      params: {
-        slug: toSlug(project.data.title),
-      },
+      params: {},
       props: {
         project,
       },

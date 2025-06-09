@@ -2,7 +2,6 @@
 return Astro.redirect("/under-construction");
 import Layout from "@layouts/Layout.astro";
 import PageTitle from "@components/ui/PageTitle.astro";
-import Projects from "@components/projects/Projects.astro";
 
 export const prerender = true;
 ---
@@ -10,6 +9,5 @@ export const prerender = true;
 <Layout title="projects">
   <main class="py-6 px-8">
     <PageTitle text={"projects"} periodClass={/*tw*/ "text-green-500"} />
-    <Projects />
   </main>
 </Layout>
