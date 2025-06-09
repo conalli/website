@@ -5,10 +5,11 @@ export interface Props {
 import Footer from "@components/footer/Footer.astro";
 import Header from "@components/header/Header.astro";
 import { toTitle } from "@utils/page";
+import "../styles/global.css";
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
