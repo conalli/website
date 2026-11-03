@@ -1,0 +1,80 @@
+---
+const title = "Conall Imlah — A work in progress";
+const description = "Conall Imlah's personal website is under construction. Find me on GitHub or LinkedIn.";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#1c1d1a" />
+    <meta name="author" content="Conall Imlah" />
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Conall Imlah" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --background: #1c1d1a;
+    --accent: #f5d636;
+    --on-accent: #25251f;
+    --ink: #f3f1e8;
+    --line: #41423a;
+    --muted: #b5b4a7;
+    --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    color: var(--ink);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+    color-scheme: dark;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    min-width: 320px;
+  }
+  a {
+    color: inherit;
+  }
+  a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 5px;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+  .skip-link {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 12px;
+    color: var(--on-accent);
+    background: var(--accent);
+    z-index: 10;
+    transform: translateY(-160%);
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+</style>

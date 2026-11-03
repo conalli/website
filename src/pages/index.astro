@@ -1,0 +1,373 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const links = [
+  { label: "GitHub", href: "https://github.com/conalli", detail: "@conalli" },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/conalli",
+    detail: "Let's connect",
+  },
+];
+---
+
+<Layout>
+  <div class="site">
+    <header class="masthead">
+      <a class="wordmark" href="/" aria-label="Conall Imlah home"
+        >conall imlah</a
+      >
+      <span class="site-status"
+        ><span class="status-light"></span> A work in progress</span
+      >
+    </header>
+
+    <main id="main">
+      <div class="intro">
+        <h1>Under Construction<span>.</span></h1>
+        <p class="description">Rebuilding my little corner of the internet.</p>
+      </div>
+
+      <div
+        class="worksite"
+        aria-label="Under construction. Keep out. Creative work in progress."
+      >
+        <span class="site-mark mark-left" aria-hidden="true">+</span>
+        <div class="tape tape-middle" aria-hidden="true">
+          <div class="tape-text">
+            {
+              Array.from({ length: 8 }, () => (
+                <span>
+                  CAUTION <span class="tape-symbol">✳</span> KEEP OUT
+                  <span class="tape-symbol">✳</span>
+                </span>
+              ))
+            }
+          </div>
+        </div>
+        <div class="tape tape-back" aria-hidden="true">
+          <div class="tape-text">
+            {
+              Array.from({ length: 8 }, () => (
+                <span>
+                  KEEP OUT <span class="tape-symbol">✳</span> WORK IN PROGRESS{" "}
+                  <span class="tape-symbol">✳</span>
+                </span>
+              ))
+            }
+          </div>
+        </div>
+        <div class="tape tape-front" aria-hidden="true">
+          <div class="tape-text">
+            {
+              Array.from({ length: 8 }, () => (
+                <span>
+                  UNDER CONSTRUCTION <span class="tape-symbol">↗</span>
+                </span>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="contact">
+      <div class="contact-links">
+        {
+          links.map(({ label, href, detail }) => (
+            <a href={href}>
+              <span class="link-label">
+                {label} <span aria-hidden="true">↗</span>
+              </span>
+              <span class="link-detail">{detail}</span>
+            </a>
+          ))
+        }
+      </div>
+      <div class="colophon">
+        <span>© {new Date().getFullYear()} Conall Imlah</span><span
+          class="small-mark"
+          aria-hidden="true">CI /</span>
+      </div>
+    </footer>
+  </div>
+</Layout>
+
+<style>
+  /* Page shell and shared dimensions. */
+  .site {
+    --gutter: 5.5%;
+    --tape-height: 96px;
+    --tape-overhang: 8%;
+    max-width: 1800px;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    overflow: hidden;
+  }
+  main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  /* Header and introduction. */
+  .masthead {
+    margin: 0 var(--gutter);
+    padding: 32px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    gap: 20px;
+  }
+  .wordmark {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+    text-decoration: none;
+  }
+  .site-status,
+  .link-detail,
+  .colophon {
+    font-family: var(--mono);
+    font-size: 11px;
+  }
+  .site-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .status-light {
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .intro {
+    padding: 70px var(--gutter) 0;
+  }
+  h1 {
+    font-size: clamp(68px, 9.5vw, 145px);
+    font-weight: 800;
+    line-height: 0.96;
+    letter-spacing: -0.075em;
+    margin: 0;
+
+    span {
+      color: var(--accent);
+    }
+  }
+  .description {
+    font-size: 16px;
+    line-height: 1.65;
+    margin: 28px 0 0;
+    color: var(--muted);
+  }
+  /* Tape layers share geometry; each variant sets its angle and offset. */
+  .worksite {
+    flex: 1;
+    min-height: 340px;
+    position: relative;
+    margin-top: 18px;
+  }
+  .tape {
+    position: absolute;
+    left: calc(0% - var(--tape-overhang));
+    width: calc(100% + var(--tape-overhang) * 2);
+    height: var(--tape-height);
+    top: calc(50% - var(--tape-height) / 2 + var(--tape-offset, 0px));
+    transform: rotate(var(--tape-angle));
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--on-accent);
+    background: var(--tape-color, var(--accent));
+    border-block: 2px solid var(--on-accent);
+    box-shadow: 0 8px 18px #0005;
+  }
+  .tape::before,
+  .tape::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: repeating-linear-gradient(
+      120deg,
+      var(--on-accent) 0 8px,
+      transparent 8px 16px
+    );
+  }
+  .tape::before {
+    top: 3px;
+  }
+  .tape::after {
+    bottom: 3px;
+  }
+  .tape-middle {
+    --tape-offset: 83px;
+    --tape-angle: -2deg;
+    --tape-color: #eacb30;
+  }
+  .tape-back {
+    --tape-angle: 7deg;
+    --tape-color: #dfc32e;
+  }
+  .tape-front {
+    --tape-angle: -6deg;
+  }
+  .tape-text {
+    display: flex;
+    white-space: nowrap;
+    font-family: Impact, "Arial Narrow", sans-serif;
+    font-size: clamp(34px, 3.8vw, 54px);
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+  .tape-text > span {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-right: 28px;
+  }
+  .tape-symbol {
+    font-family: Arial, sans-serif;
+    font-size: 42px;
+  }
+  .site-mark {
+    position: absolute;
+    font: 24px var(--mono);
+    color: #99978b;
+  }
+  .mark-left {
+    left: var(--gutter);
+    top: 6px;
+  }
+  /* Contact footer. */
+  footer {
+    flex-shrink: 0;
+    margin: 28px var(--gutter) 0;
+  }
+  .contact-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-block: 1px solid var(--line);
+  }
+  .contact-links a {
+    padding: 20px 24px;
+    text-decoration: none;
+    border-right: 1px solid var(--line);
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .contact-links a:last-child {
+    border-right: 0;
+  }
+  .contact-links a:hover {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+  .contact-links a:hover .link-detail {
+    color: #454539;
+  }
+  .link-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 9px;
+  }
+  .link-detail {
+    color: var(--muted);
+  }
+  .colophon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 23px 0;
+    font-size: 10px;
+    color: var(--muted);
+  }
+  .small-mark {
+    font-weight: bold;
+    font-size: 17px;
+    color: var(--ink);
+  }
+  @media (min-width: 1600px) {
+    .intro {
+      padding-top: 90px;
+    }
+    .worksite {
+      margin-top: 50px;
+      min-height: 390px;
+    }
+  }
+  @media (max-width: 600px) {
+    .site {
+      --tape-height: 76px;
+      --tape-overhang: 20%;
+    }
+    .masthead {
+      padding: 24px 0;
+    }
+    .wordmark {
+      font-size: 21px;
+    }
+    .site-status {
+      font-size: 9px;
+      gap: 6px;
+    }
+    .intro {
+      padding-top: 55px;
+    }
+    h1 {
+      font-size: clamp(36px, 10vw, 60px);
+    }
+    .description {
+      font-size: 14px;
+      max-width: 290px;
+    }
+    .worksite {
+      margin-top: 30px;
+      min-height: 290px;
+    }
+    .tape-text {
+      font-size: 32px;
+    }
+    .tape-back {
+      --tape-angle: 12deg;
+    }
+    .tape-front {
+      --tape-angle: -10deg;
+    }
+    .tape-middle {
+      --tape-offset: 76px;
+      --tape-angle: 3deg;
+    }
+    footer {
+      margin-top: 18px;
+    }
+    .contact-links {
+      grid-template-columns: 1fr;
+    }
+    .contact-links a {
+      border-right: 0;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--line);
+    }
+    .contact-links a:last-child {
+      border-bottom: 0;
+    }
+    .link-label {
+      font-size: 15px;
+    }
+    .link-detail {
+      font-size: 10px;
+    }
+    .colophon {
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 9px;
+    }
+  }
+</style>
